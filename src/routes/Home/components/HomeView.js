@@ -6,6 +6,7 @@ export const HomeView = () => (
   <div>
     <h4>This is a duck, because Redux!</h4>
     <span>重新测试开发分支</span>
+    <span>再试一下吧</span>
     <img className={style.duck} src={DuckImage} />
   </div>
 )

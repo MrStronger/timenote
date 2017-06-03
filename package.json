@@ -20,8 +20,6 @@
   "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
   "license": "MIT",
   "dependencies": {
-    "antd": "^2.10.4",
-    "babel-plugin-import": "^1.2.1",
     "bootstrap": "^4.0.0-alpha",
     "compression": "^1.6.2",
     "express": "^4.14.0",

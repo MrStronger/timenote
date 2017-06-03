@@ -57,7 +57,6 @@ config.module.rules.push({
     query: {
       cacheDirectory: true,
       plugins: [
-        ['import', { libraryName: 'antd', style: 'css' }],
         'babel-plugin-transform-class-properties',
         'babel-plugin-syntax-dynamic-import',
         [
@@ -98,7 +97,7 @@ const extractStyles = new ExtractTextPlugin({
 })
 
 config.module.rules.push({
-  test: /\.(sass|scss|css)$/,
+  test: /\.(sass|scss)$/,
   loader: extractStyles.extract({
     fallback: 'style-loader',
     use: [

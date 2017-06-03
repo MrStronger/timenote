@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter-kit",
-  "version": "3.0.1",
-  "description": "Get started with React, Redux, and React-Router!",
+  "name": "time-note",
+  "version": "0.0.1",
+  "description": "Read best articles and make friends with your schoolmates on time note!",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",

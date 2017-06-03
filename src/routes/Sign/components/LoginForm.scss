@@ -1,0 +1,36 @@
+$global-color: #683047;
+.login-form{
+  width: 100%;
+  .form-item{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px 5px;
+    height: 40px;
+    border: 1px solid $global-color;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    input{
+      margin-left: 5px;
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+  }
+  .submit{
+    cursor:pointer;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    color: #fff;
+    text-align: center;
+    background-color: $global-color;
+    &:hover{
+      background-color: #b4587b;
+    }
+  }
+}

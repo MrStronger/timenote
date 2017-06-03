@@ -4,6 +4,8 @@
 const CHANGE_TO_REGISTER = 'CHANGE_TO_REGISTER'
 const CHANGE_TO_LOGIN = 'CHANGE_TO_LOGIN'
 
+
+
 // ------------------------------------
 // Actions
 // ------------------------------------
@@ -29,6 +31,7 @@ export function change_to_login(option) {
 // ------------------------------------
 const initialState = {
   option: 'login',
+  
 }
 
 

@@ -11,6 +11,7 @@ export const Header = () => (
     </IndexLink>
     {' · '}
     <Link to='/focus' activeClassName='route--active'>
+      <i className='fa fa-user' />
       关注
     </Link>
     {' · '}

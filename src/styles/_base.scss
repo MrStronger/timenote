@@ -1,12 +1,119 @@
-/*
-Application Settings Go Here
-------------------------------------
-This file acts as a bundler for all variables/mixins/themes, so they
-can easily be swapped out without `core.scss` ever having to know.
+@import '~normalize.css/normalize';
+@import '~font-awesome/css/font-awesome.min.css';
+@import 'bootstrap/bootstrap';
 
-For example:
+/**各种主题颜色**/
+$global-color: #683047;
+$link-active-color: #ea6f5a;
+$bg-color: #fff;
 
-@import './variables/colors';
-@import './variables/components';
-@import './themes/default';
-*/
+/**设备尺寸划分**/
+$device-lg: 1200px;
+$device-mid: 992px;
+$device-sm: 768px;
+
+/**字体尺寸划分**/
+$font-size-lg: 20px;
+$font-size-mid: 18px;
+$font-size-sm: 16px;
+$font-size-xs: 14px;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, 
+dl, dt, dd, ul, ol, li, 
+pre, 
+fieldset, legend, button, input, textarea,
+th, td {
+    margin: 0;
+    padding: 0;
+}
+body,div,button,input {
+	font-family: FontAwesome,"SF UI Text",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	color: $global-color;
+}
+button, input, select, textarea {
+    font: inherit; 
+    color: inherit;
+}
+
+h1 { 
+	margin: .67em 0;
+  	font-size: 2em;
+}
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; }
+b,strong{ font-weight: bold;}
+code, kbd, pre{ font-family: "Courier New", Courier, monospace; }
+
+ul, ol { 
+	list-style: none;
+	padding-left: 0; 
+}
+img{
+	vertical-align: middle;
+}
+
+a{
+	color: $global-color;/*紫色*/
+}
+
+a,a:hover { 
+	text-decoration: none; 
+}
+a:hover {
+	color: $link-active-color;/*暗红色*/
+}
+
+q:before, q:after { content: ''; }
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input:focus{
+	outline: none;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+/*reset*/
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -.5em;
+}
+sub {
+  bottom: -.25em;
+}
+body{
+	background-color: $bg-color;
+	line-height: 1.42857;
+	font-size: 16px;
+}
+
+.fa{
+	margin-right: 2px;
+}
+.fa-pencil,.fa-eye{
+	font-weight: bold;
+}

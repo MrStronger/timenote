@@ -6,6 +6,7 @@ export const Header = () => (
   <div>
     <h1><a href='http://realtcg.com/TimeNote/index.html' target='_blank'>时光笔记</a></h1>
     <IndexLink to='/' activeClassName='route--active'>
+      <i className='fa fa-home' />
       Home
     </IndexLink>
     {' · '}

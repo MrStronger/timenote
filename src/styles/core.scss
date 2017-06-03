@@ -1,44 +1,49 @@
 @import 'base';
-@import '~normalize.css/normalize';
 
-// Some best-practice CSS that's useful for most apps
-// Just remove them if they're not what you want
-html {
-  box-sizing: border-box;
+
+/**可以根据不同设备调整字体大小**/
+@media only screen and (max-width: 767px) {
+	.font-xs *{
+		font-size: 14px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.font-sm *{
+		font-size: 16px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+	.font-md *{
+		font-size: 18px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.font-lg *{
+		font-size: 20px;
+	}
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/**响应式显示**/
+@media (max-width: 767px) {
+	.hidden-xs {
+		display: none !important;
+	}
+}
+@media (min-width: 768px) {
+	.hidden-lg {
+		display: none !important;
+	}
 }
 
-body{
-  font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo, "Malgun Gothic", sans-serif;
-  color: #333;
-  font-size: 14px;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-a{
-  color:#07c;
-  text-decoration: none;
-  &:hover{
-    color:#3af;
-    text-decoration: underline;
-  }
-}
-
-.container{
-  width:1000px;
-  margin:0 auto;
-}
-.textCenter{
-  text-align: center;
+/*
+================================
+  一些组件的基本设置
+================================
+*/
+/**内联列表**/
+.list-inline > li{
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: middle;
 }

@@ -1,7 +1,26 @@
-.loading{
-  height: 40px;
-  text-align: center;
-  div {
-    display: inline-block;
+.sign{
+  width: 180px;
+  margin: 0 auto;
+  .logo{
+
+  }
+  .menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    b{
+      padding: 10px;
+    }
+    li{
+      padding: 2px 5px;
+    }
+    .active{
+      border-bottom: 2px solid #ea6f5a;
+      margin-bottom: -2px;
+      color: #ea6f5a;
+    }
+  }
+  .main{
+    margin-top: 20px;
   }
 }

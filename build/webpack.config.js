@@ -57,6 +57,7 @@ config.module.rules.push({
     query: {
       cacheDirectory: true,
       plugins: [
+        ['import', { libraryName: 'antd', style: 'css' }],
         'babel-plugin-transform-class-properties',
         'babel-plugin-syntax-dynamic-import',
         [
@@ -97,15 +98,13 @@ const extractStyles = new ExtractTextPlugin({
 })
 
 config.module.rules.push({
-  test: /\.(sass|scss)$/,
+  test: /\.(sass|scss|css)$/,
   loader: extractStyles.extract({
     fallback: 'style-loader',
     use: [
       {
         loader: 'css-loader',
         options: {
-          modules: true,
-          localIdentName: '[path][name]__[local]--[hash:base64:5]',
           sourceMap: project.sourcemaps,
           minimize: {
             autoprefixer: {

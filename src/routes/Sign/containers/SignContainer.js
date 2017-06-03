@@ -1,12 +1,16 @@
 import { connect } from 'react-redux'
-import { fetchZen, clearZen } from './../modules/sign'
+import { change_to_register, change_to_login } from './../modules/sign'
 
-import Sign from '../components/Sign'
+import Header from '../components/Sign.js'
 
 const mapDispatchtoProps = {
+  change_to_register,
+  change_to_login
 }
 
 const mapStateToProps = (state) => ({
+  auth: state.auth,
+  option: state.sign.option
 })
 
-export default connect(mapStateToProps, mapDispatchtoProps)(Sign)
+export default connect(mapStateToProps, mapDispatchtoProps)(Header)

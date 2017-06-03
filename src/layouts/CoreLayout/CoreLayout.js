@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from '../../components/Header'
 import PropTypes from 'prop-types'
-import style from './CoreLayout.scss'
-import core from '../../styles/core.scss'
+import './CoreLayout.scss'
+import '../../styles/core.scss'
 
 export const CoreLayout = ({ children }) => (
-  <div className={core.textCenter}>
+  <div className='textCenter'>
     <Header />
-    <div className={style.corelayoutViewport}>
+    <div className='corelayoutViewport'>
       {children}
     </div>
   </div>

@@ -47,3 +47,53 @@
 	padding-right: 10px;
 	vertical-align: middle;
 }
+
+/*
+================================
+	基本辅助类
+================================
+*/
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.relative{
+	position: relative;
+}
+.absolute{
+	position: absolute;
+}
+.fixed{
+	position: fixed;
+}
+.hidden{
+	display: none;
+}
+.block{
+	display: block;
+}
+.inlineblock{
+	display: inline-block;
+}
+.text-center{
+	text-align: center;
+}
+/**状态切换**/
+.active {
+	color: $global-color;
+}
+/**清除浮动**/
+.clearfix{
+	zoom: 1;
+
+	&:before,&:after{
+		display: table;
+		line-height: 0;
+		content: "";
+	}
+	&:after{
+		clear: both;
+	}
+}

@@ -10,7 +10,8 @@ const mapDispatchtoProps = {
 }
 
 const mapStateToProps = (state) => ({
-  option: state.sign.registerOption.option
+  option: state.sign.registerOption.option,
+  asyncPhoneForm: state.form.asyncPhoneForm
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(RegisterForm)

@@ -37,14 +37,7 @@ export function option_to_register(option) {
 
 const initialState = {
   option: 'phone',
-  error: {
-    isGet: false,
-    info: ''
-  },
-  verify_code: {
-    count: 60,
-
-  }
+  
 }
 
 

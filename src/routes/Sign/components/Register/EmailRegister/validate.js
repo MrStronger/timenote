@@ -1,6 +1,6 @@
 const emailReg = /^([a-zA-Z_0-9-])+@([a-zA-Z_0-9-])+(.[a-zA-Z_0-9-])+$/
 const validate = (values) => {
-  
+
   const errors = {}
   if(!values.username){
     errors.username = '请输入你的昵称'

@@ -289,7 +289,7 @@ class EmailRegister extends React.Component {
   */
   render(){
     const {handleSubmit, pristine, reset, submitting, error} = this.props
-    
+
     return (
       <form className='form' onSubmit={handleSubmit(submit)}>
         <Field
@@ -305,6 +305,7 @@ class EmailRegister extends React.Component {
           icon='envelope'
           component={renderField}
           label='输入你的邮箱'
+          async={true}
         />
         <Field
           name='password'
@@ -336,5 +337,5 @@ export default reduxForm({
   form: 'asyncEmailForm',
   validate,
   asyncValidate,
-  asyncBlurFields: ['email']
+  asyncBlurFields: ['username','email']
 })(EmailRegister);

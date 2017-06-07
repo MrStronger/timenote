@@ -1,0 +1,136 @@
+
+.navbar{
+	width: 100%;
+	height: 56px;
+	border-top: 5px solid #683047;
+	border-bottom:1px solid #f9f9f9 ;
+	background-color: #fff;
+	min-width: 320px;
+
+  .width-limit{
+	  min-width: 220px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .nav-left,.nav-right {
+      li{
+        height: 50px;
+        line-height: 50px;
+
+        .active{
+          color: #ea6f5a;
+        }
+      }
+      
+    }
+    .nav-right {
+        img{
+          width: 32px;
+          height: 32px;
+          border: 1px solid #ddd;
+          border-radius: 50%;
+        }
+
+        .dropdown{
+          position: relative;
+          cursor: pointer;
+
+          &:hover .dropdown-menu{
+            display: block;
+          }
+          .dropdown-menu{
+            position: absolute;
+            top: 50px;
+            display: none;
+            margin-right: -100%;
+            border: 1px solid #696677;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #9e7587;
+            background-color: #fff;
+            z-index: 1;
+
+            li {
+              padding: 5px;
+              &:hover {
+                 background-color: #ececec;
+              }
+            }
+          }
+        
+        }
+    } 
+
+    .xs-toggle {
+      margin-right: -35px;
+
+      li {
+        padding: 10px;
+      }
+    }
+  }
+
+  .logo{
+	  left: 50%;
+
+    a {
+	    left: -50%;
+
+      img {
+        width: auto;
+        height: 50px;
+      }
+    }
+  }
+
+  .navbar-toggle{
+    background-color: transparent;
+    border: none;
+  }
+  .icon-xsnav{
+    width: 28px;
+    height: 28px;
+    background-size: 28px 28px;
+  }
+  .icon-famous{
+    background-image: url(../assets/images/famous.png);
+  }
+  .icon-menu{
+    background-image: url(../assets/images/menu.png);
+  }
+}
+
+@media (max-width: 767px) {
+	.logo{
+    left: 0 !important;
+		position: static;
+    margin-left: 12px;
+
+    a {
+      left: 0 !important;
+    }
+	}
+}
+@media (max-width: 767px) {
+	.width-limit{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+
+.subnav{
+	border-bottom: 1px solid #e7e7e7;
+	background-color: #f9f9f9;
+	font-size: 14px;
+}
+.subnav >li {
+	padding: 5px  !important;
+}
+
+#navbar-collapse {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s ease-in;
+}

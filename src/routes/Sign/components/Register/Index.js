@@ -32,7 +32,7 @@ class RegisterForm extends React.Component {
     return (
       <div className='register'>
         {
-          this.props.option == 'phone'? <PhoneRegister /> : <EmailRegister />
+          this.props.option == 'phone'? <PhoneRegister asyncPhoneForm={this.props.asyncPhoneForm} /> : <EmailRegister />
         }
         <div className='option'>
           <div>其他注册方式</div>

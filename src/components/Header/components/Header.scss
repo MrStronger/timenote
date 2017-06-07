@@ -18,6 +18,10 @@
       li{
         height: 50px;
         line-height: 50px;
+
+        .active{
+          color: #ea6f5a;
+        }
       }
       
     }
@@ -38,7 +42,7 @@
           }
           .dropdown-menu{
             position: absolute;
-            top: 30px;
+            top: 50px;
             display: none;
             margin-right: -100%;
             border: 1px solid #696677;

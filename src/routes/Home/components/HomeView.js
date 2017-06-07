@@ -1,13 +1,10 @@
 import React from 'react'
-import DuckImage from '../assets/Duck.jpg'
+import ArticleItem from '../../../components/ArticleItem/ArticleItem'
 import style from './HomeView.scss'
 
 export const HomeView = () => (
   <div>
-    <h4>This is a duck, because Redux!</h4>
-    <span>重新测试开发分支</span>
-    <span>再试一下吧</span>
-    <img className={style.duck} src={DuckImage} />
+    <ArticleItem />
   </div>
 )
 

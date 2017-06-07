@@ -5,17 +5,24 @@ $global-color: #683047;
     width: 90%;
     margin: 0 auto;
     margin-top: 10px;
-    padding: 5px 5px;
-    height: 40px;
-    border: 1px solid $global-color;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    input{
-      margin-left: 5px;
-      width: 100%;
-      border: none;
-      outline: none;
+    .form-item-input{
+      padding: 5px 10px;
+      height: 40px;
+      border: 2px solid $global-color;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      input{
+        margin-left: 5px;
+        width: 90%;
+        border: none;
+        outline: none;
+      }
+    }
+    .form-item-error{
+      position: relative;
+      top: 4px;
+      left: 8px;
     }
   }
   .submit{

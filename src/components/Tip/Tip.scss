@@ -1,0 +1,31 @@
+
+
+.tip{
+  position: relative;
+  border: 2px solid #b4587b;
+  border-radius: 4px;
+  padding: 4px 8px;
+  .fa{
+    margin-right: 5px;
+  }
+  &:before{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    left: 20px;
+    top: -16px;
+    border: 8px transparent solid;
+    border-bottom: 8px solid #b4587b;
+  }
+  &:after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    left: 20px;
+    top: -13px;
+    border: 8px transparent solid;
+    border-bottom: 8px solid #fff;
+  }
+}

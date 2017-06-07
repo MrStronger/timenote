@@ -4,13 +4,13 @@ import React from 'react'
 import { Link } from 'react-router'
 import './Sign.scss'
 
-import LoginForm from './LoginForm'
-import RegisterForm from './RegisterForm'
+import Login from '../containers/LoginContainer'
+import Register from '../containers/RegisterContainer'
 
 
 class Sign extends React.Component {
   componentDidMount() {
-    console.log(this.props);
+    
   }
   render() {
     return (
@@ -24,7 +24,7 @@ class Sign extends React.Component {
           <li className={this.props.option == 'register'? 'active': ''} onClick={() => this.props.change_to_register('register')}>注册</li>
         </ul>
         <div className='main'>
-          {this.props.option == 'login'? <LoginForm /> : <RegisterForm />}
+          {this.props.option == 'login'? <Login /> : <Register />}
         </div>
       </div>
     );

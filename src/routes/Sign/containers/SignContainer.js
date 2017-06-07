@@ -10,7 +10,7 @@ const mapDispatchtoProps = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  option: state.sign.option
+  option: state.sign.signOption.option
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Header)

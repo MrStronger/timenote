@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
-import { sign_out } from '../../../store/auth'
-import Header from '../components/Header'
+import { sign_out } from '../store/auth'
+import Header from '../components/Header/Header'
 
 const mapDispatchToProps = (dispatch) => {
   return {

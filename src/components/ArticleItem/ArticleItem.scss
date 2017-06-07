@@ -1,6 +1,8 @@
 
 .have-img{
     padding: 10px 5px;
+    max-width: 650px;
+    border-bottom: 1px solid #e7e7e7;
     .note-img {
         max-width: 22%;
         right: 0;
@@ -23,6 +25,7 @@
 
     .note-ellipsis{
         text-overflow: ellipsis;
+        font-size: 14px;
         color: #616161;
     }
     .note-text{
@@ -33,8 +36,13 @@
         }
 
         .author {
+            .authorName{
+                margin-right: 5px;
+            }
             .time{
                 color: #969696;
+                font-size: 12px;
+                vertical-align: text-top;
             }
         }
         .meta {

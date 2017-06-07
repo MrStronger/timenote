@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/Header/containers/HeaderContainer'
+import Header from '../../containers/HeaderContainer'
 import PropTypes from 'prop-types'
 import './CoreLayout.scss'
 import '../../styles/core.scss'

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router'
-import logoImg from '../assets/images/logo.png'
+import { IndexLink, Link } from 'react-router'
+import logoImg from './assets/logo.png'
 import './Header.scss'
 
 class Header extends Component {
@@ -43,7 +43,7 @@ class Header extends Component {
       <div>
         <nav className='navbar'>
           <div className='width-limit clearfix'>
-            <div className='logo absolute'><Link to='/' className='relative'><img src={logoImg} /></Link></div>
+            <div className='logo absolute'><IndexLink to='/' className='relative'><img src={logoImg} /></IndexLink></div>
             <ul className='right list-inline hidden-lg xs-toggle'>
               <li><Link to='/hall' className=''><span className='icon-xsnav icon-famous block' /></Link></li>
               <li><button type='button' className='navbar-toggle block' onClick={this.showNavHandleClick}>
@@ -52,7 +52,7 @@ class Header extends Component {
             </ul>
 
             <ul className='left list-inline hidden-xs nav-left' ref='userArea'>
-              <li><Link to='/' activeClassName='active'>发现</Link></li>
+              <li><IndexLink to='/' activeClassName='active'>发现</IndexLink></li>
               <li><Link to='/focus' activeClassName='active'>关注</Link></li>
               <li><Link to='/hall' activeClassName='active'>名人堂</Link></li>
             </ul>

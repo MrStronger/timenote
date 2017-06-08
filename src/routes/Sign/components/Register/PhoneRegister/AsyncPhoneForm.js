@@ -3,7 +3,6 @@ import { Field, reduxForm } from 'redux-form'
 
 import Tip from '../../../../../components/Tip/Tip'
 import Spinner from '../../../../../components/Spinner/Spinner'
-import InterVal from '../../../components/InterVal/InterVal'
 
 import validate from './validate'
 import asyncValidate from './asyncValidate'

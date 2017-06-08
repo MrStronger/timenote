@@ -36,7 +36,7 @@ export default class ArticleItem extends Component {
     }
   }
   render () {
-    const { user, time, article, label, data } = this.props
+    const { user, time, article, label, data } = this.props.data
     return (
       <div className='have-img relative'>
         <a href={article.link} className='note-img absolute inlineblock' target='_blank'>

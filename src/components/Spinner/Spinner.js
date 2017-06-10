@@ -1,47 +1,46 @@
-import React, {Component} from 'react';
-import Gif from './Gif';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Gif from './Gif'
 
+let style = require('style-loader!css-loader!./style.css')
 
-let style = require('style-loader!css-loader!./style.css');
-
-class Spinner  extends Component {
-  constructor(props) {
-    super(props);
+class Spinner extends Component {
+  constructor (props) {
+    super(props)
   }
 
-  render() {
-
-    if(!this.props.show) {
-      return <span></span>;
+  render () {
+    if (!this.props.show) {
+      return <span />
     }
-    const size = this.props.size;
-    let ste = this.props.style;
-    if(size > 0) {
-      ste.fontSize = size;
+    const size = this.props.size
+    let ste = this.props.style
+    if (size > 0) {
+      ste.fontSize = size
     }
     let loading = (
-      <div className="svg-loader" style={ste}>
-        <svg width="1em" height="1em" ><circle style={{stroke:this.props.color}} cx="0.5em" cy="0.5em" r="0.45em"/></svg>
+      <div className='svg-loader' style={ste}>
+        <svg width='1em' height='1em' ><circle style={{ stroke:this.props.color }} cx='0.5em' cy='0.5em' r='0.45em' /></svg>
       </div>
-    );
-    if(this.props.type != 'svg') {
-      loading = <Gif size={this.props.size}></Gif>;
+    )
+    if (this.props.type != 'svg') {
+      loading = <Gif size={this.props.size} />
     }
 
-    if(this.props.children) {
-      loading = this.props.children;
+    if (this.props.children) {
+      loading = this.props.children
     }
 
     // 返回行内的加载内容
-    if(this.props.display == 'inline') {
-      return loading;
+    if (this.props.display == 'inline') {
+      return loading
     }
 
     return (
-      <div className="react-loading-spinner" >
-        <div className="loading-inner">
+      <div className='react-loading-spinner' >
+        <div className='loading-inner'>
           {loading}
-          <div className="alert-text">{this.props.text}</div>
+          <div className='alert-text'>{this.props.text}</div>
         </div>
       </div>
     )
@@ -49,14 +48,14 @@ class Spinner  extends Component {
 }
 
 Spinner.propTypes = {
-  type: React.PropTypes.string,
-  display: React.PropTypes.string,
-  color: React.PropTypes.string,
-  style: React.PropTypes.object,
-  text: React.PropTypes.string,
-  cls: React.PropTypes.string,
-  show: React.PropTypes.bool,
-};
+  type: PropTypes.string,
+  display: PropTypes.string,
+  color: PropTypes.string,
+  style: PropTypes.object,
+  text: PropTypes.string,
+  cls: PropTypes.string,
+  show: PropTypes.bool,
+}
 
 Spinner.defaultProps = {
   type: 'svg',
@@ -67,4 +66,4 @@ Spinner.defaultProps = {
   show: false,
 }
 
-export default Spinner;
+export default Spinner

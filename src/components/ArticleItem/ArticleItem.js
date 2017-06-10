@@ -4,39 +4,19 @@ import './ArticleItem.scss'
 
 export default class ArticleItem extends Component {
   static propTypes = {
-    user: PropTypes.object.isRequired,
-    time: PropTypes.string.isRequired,
-    article: PropTypes.object.isRequired,
-    label: PropTypes.object.isRequired,
-    data: PropTypes.object.isRequired
+    data: PropTypes.shape({
+      user: PropTypes.object.isRequired,
+      time: PropTypes.string.isRequired,
+      article: PropTypes.object.isRequired,
+      label: PropTypes.object.isRequired,
+      data: PropTypes.object.isRequired
+    })
   }
   static defaultProps = {
-    user: {
-      userId: '1vdf1',
-      userName: '莫凡',
-      link: '/sign',
-      img: 'http://upload.jianshu.io/users/upload_avatars/2826570/ad8616930f55?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144'
-    },
-    time: '今天11:01',
-    article: {
-      link: '/hall',
-      title: '那些“根”上的东西，才真正值得我们去追寻',
-      img: ['http://upload-images.jianshu.io/upload_images/1767483-0fbcbe3c77ffe109.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/375/h/300'],
-      body: '在我的记忆中，有两次考试经历，令我印象深刻。 都不算大考，一次期中，一次期末。 某年的期中考试，我拿了学年第一名，欢喜程度自无需多言，就差放炮庆祝了...',
-    },
-    label: {
-      link: '/sign',
-      name: '大学生活'
-    },
-    data: {
-      follow: 23,
-      comment: 46,
-      collection: 14,
-      like: 456
-    }
+
   }
   render () {
-    const { user, time, article, label, data } = this.props
+    const { user, time, article, label, data } = this.props.data
     return (
       <div className='have-img relative'>
         <a href={article.link} className='note-img absolute inlineblock' target='_blank'>

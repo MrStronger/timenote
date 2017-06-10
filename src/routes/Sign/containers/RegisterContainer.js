@@ -1,12 +1,10 @@
 import { connect } from 'react-redux'
 
-import { option_to_register } from '../modules/register'
-import { fetchRegister } from '../'
+import { optionToRegister } from '../modules/register'
 import RegisterForm from '../components/Register/Index'
 
 const mapDispatchtoProps = {
-  option_to_register,
-
+  optionToRegister
 }
 
 const mapStateToProps = (state) => ({

@@ -1,35 +1,31 @@
 // Constants
 
-//切换注册方式
+// 切换注册方式
 const REGISTER_BY_PHONE = 'REGISTER_BY_PHONE'
 const REGISTER_BY_EMAIL = 'REGISTER_BY_EMAIL'
-const REQUEST_VERIFY_CODE = 'REQUEST_VERIFY_CODE'
 
-//手机验证码区域
+// 手机验证码区域
 
+// Actions
 
-//Actions
-
-function register_by_phone() {
+export function registerByPhone () {
   return {
     type: REGISTER_BY_PHONE
   }
 }
 
-function register_by_email() {
+export function registerByEmail () {
   return {
     type: REGISTER_BY_EMAIL
   }
 }
 
-export function option_to_register(option) {
+export function optionToRegister (option) {
   switch (option) {
     case 'phone':
-      return register_by_phone()
-      break;
+      return registerByPhone()
     case 'email':
-      return register_by_email()
-      break;
+      return registerByEmail()
     default:
       break
   }
@@ -37,18 +33,17 @@ export function option_to_register(option) {
 
 const initialState = {
   option: 'phone',
-  
+
 }
 
+// Reducer
 
-//Reducer
-
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case REGISTER_BY_PHONE:
-      return { ...state, option: 'phone'}
+      return { ...state, option: 'phone' }
     case REGISTER_BY_EMAIL:
-      return { ...state, option: 'email'}
+      return { ...state, option: 'email' }
     default:
       return state
   }

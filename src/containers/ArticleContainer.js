@@ -9,7 +9,7 @@ export default class ArticleContainer extends Component {
     fetch('/r.json').then(res => {
       const data = res.json()
       this.setState({ data: data })
-    }).catch(err => console.log("Get articles faild! Check code at src/containers/ArticleContainer line12", err))
+    }).catch(err => console.log('Get articles faild! Check code at src/containers/ArticleContainer line12', err))
   }
   render () {
     let articleItems = []

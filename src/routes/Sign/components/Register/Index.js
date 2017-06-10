@@ -1,38 +1,41 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import './RegisterForm.scss'
 
 import EmailRegister from './EmailRegister/AsyncEmailForm'
 import PhoneRegister from './PhoneRegister/AsyncPhoneForm'
 
-import submit from './EmailRegister/submit'
-
-
 class RegisterForm extends React.Component {
+  static propTypes = {
+    option: PropTypes.string.isRequired,
+    optionToRegister: PropTypes.func.isRequired,
+    asyncPhoneForm: PropTypes.object,
+  }
   handleSubmit = (e) => {
     e.preventDefault()
   }
-  componentDidMount() {
+  componentDidMount () {
 
   }
-  handleClick(option){
-    this.props.option_to_register(option)
+  handleClick (option) {
+    this.props.optionToRegister(option)
   }
-  render() {
+  render () {
     let { option } = this.props
     let data = [
-      { key: 'email', value: '邮箱注册'},
-      { key: 'phone', value: '手机号注册'}
+      { key: 'email', value: '邮箱注册' },
+      { key: 'phone', value: '手机号注册' }
     ]
-    let options = data.map( item => {
-      return option == item.key? '':<li key={item.key} onClick={() => this.handleClick(item.key)}>
+    let options = data.map(item => {
+      return option === item.key ? '' : <li key={item.key} onClick={() => this.handleClick(item.key)}>
         {item.value}
       </li>
     })
     return (
       <div className='register'>
         {
-          this.props.option == 'phone'? <PhoneRegister asyncPhoneForm={this.props.asyncPhoneForm} /> : <EmailRegister />
+          this.props.option === 'phone' ? <PhoneRegister asyncPhoneForm={this.props.asyncPhoneForm} /> : <EmailRegister />
         }
         <div className='option'>
           <div>其他注册方式</div>
@@ -41,9 +44,8 @@ class RegisterForm extends React.Component {
           </ul>
         </div>
       </div>
-    );
+    )
   }
-
 }
 
 export default RegisterForm

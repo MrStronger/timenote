@@ -15,7 +15,7 @@
     padding-right: 50px;
 
     .nav-left,.nav-right {
-      li{
+      > li {
         height: 50px;
         line-height: 50px;
 
@@ -43,8 +43,8 @@
           .dropdown-menu{
             position: absolute;
             top: 50px;
+            min-width: 120px;
             display: none;
-            margin-right: -100%;
             border: 1px solid #696677;
             border-radius: 5px;
             box-shadow: 0 0 5px #9e7587;
@@ -52,9 +52,13 @@
             z-index: 1;
 
             li {
-              padding: 5px;
+              padding: 10px 15px;
+              line-height: 20px;
               &:hover {
                  background-color: #ececec;
+              }
+              i {
+                margin-right: 5px;
               }
             }
           }

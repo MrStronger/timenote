@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router'
 
 class Route extends Component {
-
   constructor (props) {
     super(props)
     this.redirect = this.redirect.bind(this)

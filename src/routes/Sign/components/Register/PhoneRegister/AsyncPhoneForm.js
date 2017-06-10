@@ -1,82 +1,34 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 
-import Tip from '../../../../../components/Tip/Tip'
 import Spinner from '../../../../../components/Spinner/Spinner'
+import renderField from '../../Input/Input'
 
 import validate from './validate'
 import asyncValidate from './asyncValidate'
 import submit from './submit'
 
-const renderField = ({
-  input,
-  label,
-  type,
-  icon,
-  async,
-  meta: {asyncValidating,  touched, error}
-}) => (
-  <div className='form-item'>
-    <div className={'form-item-input'}>
-      <span><i className={'fa fa-'+icon} aria-hidden='true'/></span>
-      <input {...input} type={type} placeholder={label} />
-      {
-        async ?<div className='loading'>
-                <Spinner show={asyncValidating} text='' color='#683047' />
-              </div>
-                :
-                ''
-      }
-    </div>
-    {
-      error && touched && <div className='form-item-error'>
-        <Tip info={error} />
-      </div>
-    }
-  </div>
-)
-
-const renderCodeField = ({
-  input,
-  label,
-  type,
-  icon,
-  async,
-  request_auth_code,
-  text,
-  meta: {asyncValidating,  touched, error}
-}) => (
-  <div className='form-item'>
-    <div className={'form-item-input'}>
-      <span><i className={'fa fa-'+icon} aria-hidden='true'/></span>
-      <input {...input} type={type} placeholder={label} style={{width: '50%'}}/>
-      <button className='btn-sm btn-base' type='button' onClick={request_auth_code}>
-        {text}
-      </button>
-    </div>
-    {
-      error && touched && <div className='form-item-error'>
-        <Tip info={error} />
-      </div>
-    }
-  </div>
-)
-
-function test (values, dispatch) {
-  console.log(dispatch);
-}
-
 class PhoneRegister extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       count: 60,
       start: false
     }
+    this.interVal = 0
   }
-  request_auth_code = () => {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    asyncPhoneForm: PropTypes.object,
+    handleSubmit: PropTypes.func.isRequired,
+    submitting: PropTypes.bool,
+    error: PropTypes.string
+  }
+  requestAuthCode = () => {
     let { dispatch } = this.props
     let { syncErrors } = this.props.asyncPhoneForm
+    console.log(this.props.asyncPhoneForm)
     let action = {
       type: '@@redux-form/BLUR',
       meta: {
@@ -86,39 +38,46 @@ class PhoneRegister extends React.Component {
       },
       payload: ''
     }
-    //如果用户没有填写手机号，触发blur，显示错误，并return false
-    if(syncErrors.phone){
+    // 如果用户没有填写手机号，触发blur，显示错误，并return false
+    if (syncErrors && syncErrors.phone) {
       dispatch(action)
       return false
     }
-    //当用户点击之后，查看state的start，如果已经点击过，则return false
+    // 当用户点击之后，查看state的start，如果已经点击过，则return false
     let { start } = this.state
-    if(start) return false
-    if(!this.state.start){
+    if (start) return false
+    if (!this.state.start) {
       this.setState({
         start: true
       })
-      let timer = setInterval( () => {
+      this.interVal = setInterval(() => {
         var count = this.state.count
         count--
-        if(count <= 1){
+        if (count <= 1) {
           this.setState({
             start: false
           })
           count = 60
-          clearInterval(timer)
+          clearInterval(this.interVal)
         }
         this.setState({
           count: count
         })
       }, 1000)
     }
-    //取出手机号，给用户发送验证码
-    //let { phone } = this.props.asyncPhoneForm.values
+    // 取出手机号，给用户发送验证码
+    // let { phone } = this.props.asyncPhoneForm.values
   }
-  render() {
-    const {handleSubmit, pristine, reset, submitting, error} = this.props
-    let text = this.state.start? '重新发送('+this.state.count+')' : '发送验证码'
+  componentWillUnmount () {
+    clearInterval(this.interVal)
+  }
+  render () {
+    const { handleSubmit, submitting, error } = this.props
+    let text = this.state.start ? '重新发送(' + this.state.count + ')' : '发送验证码'
+    const verify = {
+      requestAuthCode: this.requestAuthCode,
+      text: text
+    }
     return (
       <form className='form' onSubmit={handleSubmit(submit)}>
         <Field
@@ -134,16 +93,15 @@ class PhoneRegister extends React.Component {
           icon='mobile fa-lg'
           component={renderField}
           label='输入你的手机号'
-          async={true}
+          async
         />
         <Field
-            name='code'
-            type='text'
-            icon='shield'
-            request_auth_code={this.request_auth_code}
-            text={text}
-            component={renderCodeField}
-            label='验证码'
+          name='code'
+          type='text'
+          icon='shield'
+          component={renderField}
+          label='验证码'
+          verify={verify}
           />
         <Field
           name='password'
@@ -163,7 +121,7 @@ class PhoneRegister extends React.Component {
           {error && <span>{error}</span>}
           <div>
             <button className='submit btn-base' type='submit' disabled={submitting}>注册
-            <Spinner show={submitting} text='' color='#683047' /></button>
+            <Spinner show={submitting} text='' color='#683047' size={14} /></button>
           </div>
         </div>
       </form>

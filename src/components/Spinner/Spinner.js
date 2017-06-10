@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Gif from './Gif'
@@ -9,6 +10,31 @@ class Spinner extends Component {
     super(props)
   }
 
+=======
+import React from 'react'
+import PropTypes from 'prop-types'
+import Gif from './Gif'
+import './style.scss'
+
+export default class Spinner extends React.Component {
+  static propTypes = {
+    type: PropTypes.string,
+    show: PropTypes.bool,
+    style: PropTypes.object,
+    display: PropTypes.string,
+    color: PropTypes.string,
+    size: PropTypes.number,
+    children: PropTypes.object,
+    text: PropTypes.string
+  }
+  static defaultProps = {
+    type: 'svg',
+    style: {},
+    color: '#9b59b6',
+    size: 14,
+    show: false
+  }
+>>>>>>> 6f74f2c9a56e86a9ecc5fbeb8af9778c3b6af9fd
   render () {
     if (!this.props.show) {
       return <span />
@@ -20,19 +46,31 @@ class Spinner extends Component {
     }
     let loading = (
       <div className='svg-loader' style={ste}>
+<<<<<<< HEAD
         <svg width='1em' height='1em' ><circle style={{ stroke:this.props.color }} cx='0.5em' cy='0.5em' r='0.45em' /></svg>
       </div>
     )
     if (this.props.type != 'svg') {
+=======
+        <svg width='1em' height='1em' >
+          <circle style={{ stroke: this.props.color }} cx='0.5em' cy='0.5em' r='0.45em' />
+        </svg>
+      </div>
+    )
+    if (this.props.type !== 'svg') {
+>>>>>>> 6f74f2c9a56e86a9ecc5fbeb8af9778c3b6af9fd
       loading = <Gif size={this.props.size} />
     }
 
     if (this.props.children) {
       loading = this.props.children
     }
-
     // 返回行内的加载内容
+<<<<<<< HEAD
     if (this.props.display == 'inline') {
+=======
+    if (this.props.display === 'inline') {
+>>>>>>> 6f74f2c9a56e86a9ecc5fbeb8af9778c3b6af9fd
       return loading
     }
 
@@ -46,6 +84,7 @@ class Spinner extends Component {
     )
   }
 }
+<<<<<<< HEAD
 
 Spinner.propTypes = {
   type: PropTypes.string,
@@ -67,3 +106,5 @@ Spinner.defaultProps = {
 }
 
 export default Spinner
+=======
+>>>>>>> 6f74f2c9a56e86a9ecc5fbeb8af9778c3b6af9fd

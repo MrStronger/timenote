@@ -1,14 +1,10 @@
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
-import { sign_out } from '../store/auth'
+import { signOut } from '../store/auth'
 import Header from '../components/Header/Header'
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onSignOut: () => {
-      dispatch(sign_out())
-    }
-  }
+const mapDispatchToProps = {
+  onSignOut: signOut
 }
 const auth = (state) => state.auth.isAuth
 const profileData = (state) => state.auth.profile
@@ -19,7 +15,7 @@ const getUserProfile = createSelector(
         return profile
       } else {
         return {
-          
+
         }
       }
     }

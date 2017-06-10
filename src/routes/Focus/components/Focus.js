@@ -5,7 +5,7 @@ export const Focus = (props) => (
 )
 
 Focus.propTypes = {
-  
+
 }
 
 export default Focus

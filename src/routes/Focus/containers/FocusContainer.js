@@ -12,11 +12,11 @@ import Focus from '../components/Focus'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
- 
+
 }
 
 const mapStateToProps = (state) => ({
-  
+
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

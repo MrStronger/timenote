@@ -1,41 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 
-import Tip from '../../../../../components/Tip/Tip'
+import renderField from '../../Input//Input'
 import Spinner from '../../../../../components/Spinner/Spinner'
 
 import validate from './validate'
 import asyncValidate from './asyncValidate'
 import submit from './submit'
 
-
-const renderField = ({
-  input,
-  label,
-  type,
-  icon,
-  meta: {asyncValidating,  touched, error}
-}) => (
-  <div className='form-item'>
-    <div className={'form-item-input'}>
-      <span><i className={'fa fa-'+icon} style={{fontSize: type == 'email'? 12 : '' }} aria-hidden='true'/></span>
-      <input {...input} type={type} placeholder={label} />
-      <div className='loading'>
-        <Spinner show={asyncValidating} text='' color='#683047' />
-      </div>
-    </div>
-    {
-      error && touched && <div className='form-item-error'>
-        <Tip info={error} />
-      </div>
-    }
-  </div>
-)
-
 class EmailRegister extends React.Component {
-  render(){
-    const {handleSubmit, pristine, reset, submitting, error} = this.props
+  static propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    submitting: PropTypes.bool,
+    error: PropTypes.string,
 
+  }
+  render () {
+    const { handleSubmit, submitting, error } = this.props
     return (
       <form className='form' onSubmit={handleSubmit(submit)}>
         <Field
@@ -51,7 +33,7 @@ class EmailRegister extends React.Component {
           icon='envelope'
           component={renderField}
           label='输入你的邮箱'
-          async={true}
+          async
         />
         <Field
           name='password'
@@ -83,5 +65,5 @@ export default reduxForm({
   form: 'asyncEmailForm',
   validate,
   asyncValidate,
-  asyncBlurFields: ['username','email']
-})(EmailRegister);
+  asyncBlurFields: ['username', 'email']
+})(EmailRegister)

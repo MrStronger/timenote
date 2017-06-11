@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { signOut } from '../store/auth'
-import { changeToRegister, changeToLogin } from '../routes/Sign/modules/sign'
+import { changeToRegister, changeToLogin } from '../routes/Sign/modules/sign' // 调用登录注册模块的action creators
 import Header from '../components/Header/Header'
 
 const mapDispatchToProps = {

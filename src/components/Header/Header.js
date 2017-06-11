@@ -13,7 +13,10 @@ class Header extends Component {
   static propTypes = {
     isAuth: PropTypes.bool.isRequired,
     profile: PropTypes.object.isRequired,
-    onSignOut: PropTypes.func.isRequired
+    onSignOut: PropTypes.func.isRequired,
+
+    changeToLogin: PropTypes.func.isRequired,  // 调用登录注册模块的action creators
+    changeToRegister: PropTypes.func.isRequired
   }
 
   showNavHandleClick () {
@@ -22,7 +25,7 @@ class Header extends Component {
   }
 
   render () {
-    const { isAuth, profile, onSignOut, location, changeToRegister, changeToLogin} = this.props
+    const { isAuth, profile, onSignOut, location, changeToRegister, changeToLogin } = this.props
     let userAvatar = []
     if (isAuth) {
       userAvatar = [<li key='user' className='dropdown'>

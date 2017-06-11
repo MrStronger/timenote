@@ -21,16 +21,16 @@ export const HomeView = () => {
     </div>
   const ipad =
     <div className='row'>
-      <div className='col-xs-13 col-sm-9 col-md-9 mainBody'>
+      <div className='col-xs-13 col-sm-9 col-md-9 ipad-class'>
         <Slider items={images} />
         <ArticleItem data={articleData} />
       </div>
-      <div className='hidden-xs col-sm-4 col-md-4 recommendAuthors'>
+      <div className='hidden-xs col-sm-4 col-md-4 ipad-class'>
         <Recommend type='authors' data={authorData} />
         <Recommend type='labels' data={labelData} />
       </div>
     </div>
-  if (document.body.clientWidth >= 768 && document.body.clientWidth <= 992) {
+  if (window.screen.width >= 768 && window.screen.width <= 992) {
     return (
       <div className='container'>
         {ipad}

@@ -69,7 +69,7 @@ class Carousel extends Component {
       nowDot: newN,
       prevDot: this.state.nowDot
     })
-    if (slider.style.left === '-500%' && n === 1) {
+    if (slider.style.left === '-' + (this.props.items.length - 1) * 100 + '%' && n === 1) {
       sleep(1000).then(() => {
         this.setState({
           nowDot: 1,

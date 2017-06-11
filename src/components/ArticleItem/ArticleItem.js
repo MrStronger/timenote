@@ -18,7 +18,7 @@ export default class ArticleItem extends Component {
   render () {
     const { user, time, article, label, data } = this.props.data
     return (
-      <div className='have-img relative'>
+      <div className='atricle-item relative'>
         <a href={article.link} className='note-img absolute inlineblock' target='_blank'>
           <img src={article.img[0]} />
         </a>
@@ -31,12 +31,12 @@ export default class ArticleItem extends Component {
             <span className='time'>{time}</span>
 
           </div>
-          <h2 className=''><a className='note-title' target='_blank' href={article.link}>{article.title}</a></h2>
-          <p className='note-ellipsis'>
+          <h2 className='font-xs'><a className='note-title' target='_blank' href={article.link}>{article.title}</a></h2>
+          <p className='note-ellipsis hidden-xs'>
             {article.body}
           </p>
           <div className='meta'>
-            <a className='label' target='_blank' href={label.link}>{label.name}</a>
+            <a className='label hidden-xs' target='_blank' href={label.link}>{label.name}</a>
             <a className='icon-set '><i className='fa fa-eye' />{data.follow}</a>
             <a className='icon-set ' href={article.link + '#comments'}><i className='fa fa-commenting-o' />{data.comment}</a>
             <a className='icon-set '><i className='fa fa-heart' />{data.collection}</a>

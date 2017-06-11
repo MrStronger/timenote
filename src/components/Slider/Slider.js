@@ -27,7 +27,7 @@ class Carousel extends Component {
   static defaultProps = {
     items: [],
     speed: 1,
-    delay: 2,
+    delay: 4,
     stop: true,
     autoplay: true,
   }
@@ -71,7 +71,6 @@ class Carousel extends Component {
     })
     if (slider.style.left === '-500%' && n === 1) {
       sleep(1000).then(() => {
-        console.log('跳到第一张')
         this.setState({
           nowDot: 1,
           prevDot: newN

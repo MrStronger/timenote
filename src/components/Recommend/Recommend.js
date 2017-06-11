@@ -22,7 +22,7 @@ export default class Recommend extends Component {
           <div key={item.id} className='label-container'>
             <img src={item.img} />
             <a href={item.link}>{item.labelName}</a>
-            <span className='hidden-sm'>
+            <span className='hidden-sm hidden-md'>
               <i className='fa fa-briefcase' />{item.collection}
               {' '}
               <i className='fa fa-eye' />{item.follow}
@@ -40,7 +40,7 @@ export default class Recommend extends Component {
             <p className='info'>
               <a className='icon-set'><i className='fa fa-pencil' />{item.writeNum}</a>
               <a className='icon-set'><i className='fa fa-eye' />{item.follow}</a>
-              <a className='icon-set'><i className='fa fa-thumbs-up' />{item.like}</a>
+              <a className='icon-set hidden-sm hidden-md'><i className='fa fa-thumbs-up' />{item.like}</a>
             </p>
           </div>
         )

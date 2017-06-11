@@ -52,7 +52,7 @@ class Header extends Component {
           <nav className='navbar'>
             <div className='width-limit clearfix'>
               <div className='logo absolute'><IndexLink to='/' className='relative'><img src={logoImg} /></IndexLink></div>
-              <ul className='right list-inline hidden-lg xs-toggle'>
+              <ul className='right list-inline hidden-sm hidden-md hidden-lg xs-toggle'>
                 <li><Link to='/hall' className=''><span className='icon-xsnav icon-famous block' /></Link></li>
                 <li><button type='button' className='navbar-toggle block' onClick={this.showNavHandleClick}>
                   <span className='icon-xsnav icon-menu block' />

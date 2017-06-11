@@ -5,22 +5,45 @@ import Slider from '../../../components/Slider/Slider'
 import './HomeView.scss'
 import '../../../styles/core.scss'
 
-export const HomeView = () => (
-  <div className='container'>
+export const HomeView = () => {
+  const normal =
     <div className='row'>
-      <div className='hidden-xs hidden-sm col-md-3 recommendLabels'>
+      <div className='hidden-xs col-sm-3 col-md-3 recommendLabels'>
         <Recommend type='labels' data={labelData} />
       </div>
-      <div className='col-xs-12 col-md-7'>
+      <div className='col-xs-13 col-sm-7 col-md-7 mainBody'>
         <Slider items={images} />
         <ArticleItem data={articleData} />
       </div>
-      <div className='hidden-xs hidden-sm col-md-3 recommendAuthors'>
+      <div className='hidden-xs col-sm-3 col-md-3 recommendAuthors'>
         <Recommend type='authors' data={authorData} />
       </div>
     </div>
-  </div>
-)
+  const ipad =
+    <div className='row'>
+      <div className='col-xs-13 col-sm-9 col-md-9 mainBody'>
+        <Slider items={images} />
+        <ArticleItem data={articleData} />
+      </div>
+      <div className='hidden-xs col-sm-4 col-md-4 recommendAuthors'>
+        <Recommend type='authors' data={authorData} />
+        <Recommend type='labels' data={labelData} />
+      </div>
+    </div>
+  if (document.body.clientWidth >= 768 && document.body.clientWidth <= 992) {
+    return (
+      <div className='container'>
+        {ipad}
+      </div>
+    )
+  } else {
+    return (
+      <div className='container'>
+        {normal}
+      </div>
+    )
+  }
+}
 
 export default HomeView
 /**
@@ -91,14 +114,38 @@ let labelData = [
     labelName: '爱情',
     collection: 156,
     follow: 896
+  },
+  {
+    id: '6',
+    link: 'label.link',
+    img: './images/saylove.png',
+    labelName: '表白',
+    collection: 156,
+    follow: 896
+  },
+  {
+    id: '7',
+    link: 'label.link',
+    img: './images/sing.png',
+    labelName: '唱歌',
+    collection: 156,
+    follow: 896
+  },
+  {
+    id: '8',
+    link: 'label.link',
+    img: './images/young.png',
+    labelName: '青春',
+    collection: 156,
+    follow: 896
   }
 ]
 let authorData = [
   {
     id: '1',
     link: 'user.link',
-    img: './images/dream.png',
-    userName: '梦想',
+    img: 'http://upload.jianshu.io/users/upload_avatars/227071/68a01a26-356a-4e25-9aa4-cddd4b088ef7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144',
+    userName: '莫凡',
     writeNum: '20.1k',
     like: 256,
     follow: 896
@@ -106,8 +153,8 @@ let authorData = [
   {
     id: '2',
     link: 'user.link',
-    img: './images/community.png',
-    userName: '社区',
+    img: 'http://upload.jianshu.io/users/upload_avatars/23852/cc0c1e84a511.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144',
+    userName: '徐林Grace',
     writeNum: '20.1k',
     like: 256,
     follow: 896
@@ -115,8 +162,8 @@ let authorData = [
   {
     id: '3',
     link: 'user.link',
-    img: './images/exercise.png',
-    userName: '锻炼',
+    img: 'http://upload.jianshu.io/users/upload_avatars/3058130/fe1eee1f6ffc.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144',
+    userName: '魔鬼的赞歌',
     writeNum: '20.1k',
     like: 256,
     follow: 896
@@ -124,8 +171,8 @@ let authorData = [
   {
     id: '4',
     link: 'user.link',
-    img: './images/game.png',
-    userName: '游戏',
+    img: 'http://upload.jianshu.io/users/upload_avatars/3682352/f92c33799ac5.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144',
+    userName: 'Ann苳杭杭',
     writeNum: '20.1k',
     like: 256,
     follow: 896
@@ -133,8 +180,8 @@ let authorData = [
   {
     id: '5',
     link: 'user.link',
-    img: './images/love.png',
-    userName: '爱情',
+    img: 'http://upload.jianshu.io/users/upload_avatars/18451/913538140263.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144',
+    userName: '怀左同学',
     writeNum: '20.1k',
     like: 256,
     follow: 896
@@ -143,27 +190,27 @@ let authorData = [
 
 const images = [
   {
-    src: require('../../../../public/images/03.jpg'),
+    src: './images/03.jpg',
     alt: '03.jpg'
   },
   {
-    src: require('../../../../public/images/01.jpg'),
+    src: './images/01.jpg',
     alt: '01.jpg'
   },
   {
-    src: require('../../../../public/images/05.jpg'),
+    src: '/images/05.jpg',
     alt: '05.jpg'
   },
   {
-    src: require('../../../../public/images/02.jpg'),
+    src: './images/02.jpg',
     alt: '02.jpg'
   },
   {
-    src: require('../../../../public/images/03.jpg'),
+    src: './images/03.jpg',
     alt: '03.jpg'
   },
   {
-    src: require('../../../../public/images/01.jpg'),
+    src: './images/01.jpg',
     alt: '01.jpg'
   }
 ]

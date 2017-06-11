@@ -1,6 +1,22 @@
-.recommendLabels {
- padding-left: 40px;
+.recommendLabels,.recommendAuthors {
+  margin-top: 30px;
 }
-.recommendAuthors {
-  padding-right: 40px;
+@media (min-width: 768px) and (max-width: 1200px) {
+  .recommendLabels {
+    padding-left: 0px;
+}
+  .recommendAuthors {
+    padding-right: 0px;
+  }
+}
+@media (min-width: 1200px) {
+  .recommendLabels {
+    padding-left: 40px;
+}
+  .recommendAuthors {
+    padding-right: 40px;
+  }
+}
+.mainBody {
+  margin-top: 20px;
 }

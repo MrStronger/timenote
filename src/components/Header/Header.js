@@ -22,7 +22,7 @@ class Header extends Component {
   }
 
   render () {
-    const { isAuth, profile, onSignOut, location } = this.props
+    const { isAuth, profile, onSignOut, location, changeToRegister, changeToLogin} = this.props
     let userAvatar = []
     if (isAuth) {
       userAvatar = [<li key='user' className='dropdown'>
@@ -32,12 +32,14 @@ class Header extends Component {
 
         <ul className='dropdown-menu' role='menu'>
           <li><Link to={profile.link}><i className='fa fa-user' />个人主页</Link></li>
-          <li><Link to='/'><i className='fa fa-bell' style={{marginLeft: '-2px'}} />消息</Link></li>
+          <li><Link to='/'><i className='fa fa-bell' style={{ marginLeft: '-2px' }} />消息</Link></li>
           <li><Link onClick={onSignOut}><i className='fa fa-sign-out' />退出登录</Link></li>
         </ul>
       </li>]
     } else {
-      userAvatar = [<li key='log'><Link to='/sign' activeClassName='active'>登录</Link></li>, <li key='reg'><Link to='/sign' activeClassName='active'>注册</Link></li>]
+      userAvatar = [
+        <li key='log'><Link activeClassName='active' onClick={() => { this.props.router.push('/sign'); changeToLogin() }}>登录</Link></li>,
+        <li key='reg'><Link activeClassName='active' onClick={() => { this.props.router.push('/sign'); changeToRegister() }} >注册</Link></li>]
     }
     if (location.pathname === '/sign') {
       return <i />
@@ -56,7 +58,7 @@ class Header extends Component {
 
               <ul className='left list-inline hidden-xs nav-left' ref='userArea'>
                 <li><IndexLink to='/' activeClassName='active'>发现</IndexLink></li>
-                <li><Link to='/focus' activeClassName='active'>关注</Link></li>
+                <li><Link to='/follow' activeClassName='active'>关注</Link></li>
                 <li><Link to='/hall' activeClassName='active'>名人堂</Link></li>
               </ul>
               <ul className='right list-inline hidden-xs nav-right'>
@@ -66,7 +68,7 @@ class Header extends Component {
             </div>
           </nav>
           <ul className=' subnav list-inline text-center hidden-lg' id='navbar-collapse' ref='xsToggleResponse'>
-            <li><Link to='/focus' />关注</li>
+            <li><Link to='/follow' />关注</li>
             <li><Link to='/sign' />登录</li>
             <li><Link to='/sign' />注册</li>
             <li><Link to='/write' />写文章</li>
@@ -81,7 +83,6 @@ class Header extends Component {
         </div>
       )
     }
-    
   }
 }
 

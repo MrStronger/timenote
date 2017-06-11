@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router'
 
 import './Sign.scss'
 import LogoImg from '../../../components/Header/assets/logo.png'
@@ -19,7 +20,7 @@ class Sign extends React.Component {
     return (
       <div className='sign'>
         <div className='logo'>
-          <img src={LogoImg} />
+          <Link to='/'><img src={LogoImg} /></Link>
         </div>
         <ul className='menu'>
           <li className={this.props.option === 'login' ? 'active' : ''} onClick={() => this.props.changeToLogin('login')}>登录</li>

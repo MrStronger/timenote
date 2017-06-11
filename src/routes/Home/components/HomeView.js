@@ -1,7 +1,9 @@
 import React from 'react'
 import Recommend from '../../../components/Recommend/Recommend'// 这里应该引入Container，引入component是因为要测试
-import ArticleItem from '../../..//components/ArticleItem/ArticleItem'// 这里也是
+import ArticleItem from '../../../components/ArticleItem/ArticleItem'// 这里也是
+import Slider from '../../../components/Slider/Slider'
 import './HomeView.scss'
+import '../../../styles/core.scss'
 
 export const HomeView = () => (
   <div className='container'>
@@ -10,6 +12,7 @@ export const HomeView = () => (
         <Recommend type='labels' data={labelData} />
       </div>
       <div className='col-xs-12 col-md-7'>
+        <Slider items={images} />
         <ArticleItem data={articleData} />
       </div>
       <div className='hidden-xs hidden-sm col-md-3 recommendAuthors'>
@@ -20,8 +23,6 @@ export const HomeView = () => (
 )
 
 export default HomeView
-
-
 /**
  * 测试用的数据
  */
@@ -137,5 +138,32 @@ let authorData = [
     writeNum: '20.1k',
     like: 256,
     follow: 896
+  }
+]
+
+const images = [
+  {
+    src: require('../../../../public/images/03.jpg'),
+    alt: '03.jpg'
+  },
+  {
+    src: require('../../../../public/images/01.jpg'),
+    alt: '01.jpg'
+  },
+  {
+    src: require('../../../../public/images/05.jpg'),
+    alt: '05.jpg'
+  },
+  {
+    src: require('../../../../public/images/02.jpg'),
+    alt: '02.jpg'
+  },
+  {
+    src: require('../../../../public/images/03.jpg'),
+    alt: '03.jpg'
+  },
+  {
+    src: require('../../../../public/images/01.jpg'),
+    alt: '01.jpg'
   }
 ]

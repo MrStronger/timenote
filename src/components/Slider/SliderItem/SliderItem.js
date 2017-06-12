@@ -11,7 +11,9 @@ class SliderItem extends Component {
     let width = 100 / count + '%'
     return (
       <li className='slider-item' style={{ width: width }}>
-        <img src={item.src} alt={item.alt} />
+        <a href='#'>
+          <img src={item.src} alt={item.alt} />
+        </a>
       </li>
     )
   }

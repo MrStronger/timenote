@@ -1,7 +1,7 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/CoreLayout'
 import Home from './Home'
-import FocusRoute from './Focus'
+import FollowRoute from './Follow'
 import SignRoute from './Sign'
 import HallRoute from './Hall'
 import RouteRoute from './Route'
@@ -16,7 +16,7 @@ export const createRoutes = (store) => ({
   component: CoreLayout,
   indexRoute: Home,
   childRoutes: [
-    FocusRoute(store),
+    FollowRoute(store),
     SignRoute(store),
     HallRoute(store),
     RouteRoute(store),

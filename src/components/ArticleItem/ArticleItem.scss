@@ -1,0 +1,56 @@
+
+.atricle-item{
+    padding: 10px 5px;
+    max-width: 720px;
+    min-width: 320px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e7e7e7;
+    .note-img {
+        max-width: 22%;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translate(0,-50%);
+        -ms-transform: translate(0,-50%);
+        transform: translate(0,-50%);
+
+        img{
+        
+            max-width: 100%;
+            border-radius: 10px;
+            border: 1px solid #f0f0f0;
+        }
+    
+    }
+    .note-title{
+        color: #000 !important;
+    }
+
+    .note-ellipsis{
+        text-overflow: ellipsis;
+        font-size: 14px;
+        color: #616161;
+    }
+    .note-text{
+        margin-right: 25%;
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .author {
+            .authorName{
+                margin-right: 5px;
+            }
+            .time{
+                color: #969696;
+                font-size: 12px;
+                vertical-align: text-top;
+            }
+        }
+        .meta {
+            a {
+                margin-right: 5px;
+            }
+        }
+    }
+}

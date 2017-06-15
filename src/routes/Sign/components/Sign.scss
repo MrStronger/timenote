@@ -1,7 +1,35 @@
-.loading{
-  height: 40px;
-  text-align: center;
-  div {
-    display: inline-block;
+.sign{
+  width: 300px;
+  margin: 40px auto;
+  .logo{
+    text-align: center;
+    img{
+      width: 180px;
+    }
+  }
+  .menu{
+    margin-top: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    b{
+      padding: 10px;
+    }
+    li{
+      padding: 2px 5px;
+      cursor:pointer;
+      &:hover{
+        color: #ea6f5a;
+      }
+    }
+    .active{
+      border-bottom: 2px solid #ea6f5a;
+      margin-bottom: -2px;
+      color: #ea6f5a;
+    }
+  }
+  .main{
+    width: 100%;
+    margin-top: 20px;
   }
 }

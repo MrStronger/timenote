@@ -1,22 +1,32 @@
 import { connect } from 'react-redux'
-import { increment } from '../modules/follow'
-/*  This is a container component. Notice it does not contain any JSX,
-    nor does it import React. This component is **only** responsible for
-    wiring in the actions and state necessary to render a presentational
-    component - in this case, the counter:   */
-
+import { createSelector } from 'reselect'
+import { changeFollow, changeToggle } from '../modules/follow'
 import Follow from '../components/Follow'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-
+  changeFollow,
+  changeToggle
 }
 
+const getCurrentFollow = (state) => state.follow.currentFollow
+const getCurrentToggle = (state) => state.follow.currentToggle
+const changeFollowListener = createSelector(
+    [ getCurrentFollow ],
+    (followId) => {
+      return followId
+    }
+)
+const changeToggleListener = createSelector(
+  [ getCurrentToggle ],
+  (toggleState) => {
+    return toggleState
+  }
+)
 const mapStateToProps = (state) => ({
-
+  user_id: state.auth.profile.user_id,
+  currentFollow: changeFollowListener(state),
+  currentToggle: changeToggleListener(state)
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

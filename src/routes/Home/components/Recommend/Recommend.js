@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router'
-import FollowToggle from '../FollowToggle/FollowToggle'
+import FollowToggle from '../../../../components/FollowToggle/FollowToggle'
 import './Recommend.scss'
 
 export default class Recommend extends Component {
   static propTypes = {
-    type: PropTypes.oneOf(['labels','authors']),
+    type: PropTypes.oneOf(['labels', 'authors']),
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     getAnother: PropTypes.func.isRequired
   }

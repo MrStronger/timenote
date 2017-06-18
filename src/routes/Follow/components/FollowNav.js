@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { IndexLink, Link } from 'react-router'
 import './styles/FollowNav.scss'
+import { siblings } from '../../../tools/DOMmethods'
 
 export default class FollowNav extends Component {
   constructor () {
@@ -19,27 +20,10 @@ export default class FollowNav extends Component {
   handleActive (e) {
     let target = e.target
     if (target && target.nodeName.toUpperCase() === 'LI') {
-      switch (target.id) {
-        case 'all': {
-          target.className = 'active'
-          target.nextSibling.className = ''
-          target.nextSibling.nextSibling.className = ''
-          break
-        }
-        case 'author': {
-          target.className = 'active'
-          target.previousSibling.className = ''
-          target.nextSibling.className = ''
-          break
-        }
-        case 'label': {
-          target.className = 'active'
-          target.previousSibling.className = ''
-          target.previousSibling.previousSibling.className = ''
-          break
-        }
-        default: break
-      }
+      target.classList.add('active')
+      siblings(target).forEach((item) => {
+        item.classList.remove('active')
+      })
       this.setState({ clickedTab: target.id })
     }
   }
@@ -96,11 +80,11 @@ export default class FollowNav extends Component {
     return (
       <div className='follow-tab'>
         <p className='title'>
-          Ta的最近关注
+          我的关注
         </p>
         <ul className='follow-nav list-inline' onClick={this.handleActive}>
           <li className='active' id='all'>全部</li><li id='author'>作者</li><li id='label'>标签</li>
-          <li className='right'><Link to='/hall'><i className='fa fa-plus' /></Link></li>
+          <div className='right'><Link to='/hall'><i className='fa fa-plus' /></Link></div>
         </ul>
         <ul className='content'>
           {items}

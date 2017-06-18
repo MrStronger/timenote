@@ -6,40 +6,36 @@ import './HomeView.scss'
 import '../../../styles/core.scss'
 
 export const HomeView = () => {
-  const normal =
-    <div className='row'>
-      <div className='hidden-xs col-sm-3 col-md-3 recommendLabels'>
-        <Recommend type='labels' />
-      </div>
-      <div className='col-xs-13 col-sm-7 col-md-7 mainBody'>
-        <Slider items={images} />
-        <ArticleContainer user_id='' toggleState='' />
-      </div>
-      <div className='hidden-xs col-sm-3 col-md-3 recommendAuthors'>
-        <Recommend type='authors' />
-      </div>
-    </div>
-  const ipad =
-    <div className='row'>
-      <div className='col-xs-13 col-sm-9 col-md-9 ipad-class'>
-        <Slider items={images} />
-        <ArticleContainer user_id='' toggleState='' />
-      </div>
-      <div className='hidden-xs col-sm-4 col-md-4 ipad-class'>
-        <Recommend type='authors' />
-        <Recommend type='labels' />
-      </div>
-    </div>
   if (window.screen.width >= 768 && window.screen.width <= 992) {
     return (
       <div className='container'>
-        {ipad}
+        <div className='row'>
+          <div className='col-xs-13 col-sm-9 col-md-9 ipad-class'>
+            <Slider items={images} />
+            <ArticleContainer user_id='' toggleState='' />
+          </div>
+          <div className='hidden-xs col-sm-4 col-md-4 ipad-class'>
+            <Recommend type='authors' />
+            <Recommend type='labels' />
+          </div>
+        </div>
       </div>
     )
   } else {
     return (
       <div className='container'>
-        {normal}
+        <div className='row'>
+          <div className='hidden-xs col-sm-3 col-md-3 recommendLabels'>
+            <Recommend type='labels' />
+          </div>
+          <div className='col-xs-13 col-sm-7 col-md-7 mainBody'>
+            <Slider items={images} />
+            <ArticleContainer user_id='' toggleState='' />
+          </div>
+          <div className='hidden-xs col-sm-3 col-md-3 recommendAuthors'>
+            <Recommend type='authors' />
+          </div>
+        </div>
       </div>
     )
   }

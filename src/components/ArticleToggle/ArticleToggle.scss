@@ -1,16 +1,13 @@
 .note-trigger{
 	background-color: #fff;
 	border-bottom: 1px solid #e7e7e7;
-
+  margin-bottom: 10px;
   li{
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
-    transition: all .5s ease-in
-    a{
-      color: inherit;
-    }
-    &:hover a{
+
+    &:hover {
       color: #a46b6b;
     }
   }

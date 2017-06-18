@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { siblings } from '../../../tools/DOMmethods'
+import { siblings } from '../../tools/DOMmethods'
 import PropTypes from 'prop-types'
-import './styles/ArticleToggle.scss'
+import './ArticleToggle.scss'
 
 export default class ArticleToggle extends Component {
   static propTypes = {
@@ -22,15 +22,15 @@ export default class ArticleToggle extends Component {
     let rest = []
     if (sign) {
       rest = [
-        <li><a><i className='fa fa-book' />Ta的关注</a></li>,
-        <li><a><i className='fa fa-fire' />Ta喜欢的文章</a></li>
+        <li key='follow' onClick={() => changeToggle('follow')}><i className='fa fa-eye' />Ta的关注</li>,
+        <li key='love' onClick={() => changeToggle('love')}><i className='fa fa-heart' />Ta喜欢的文章</li>
       ]
     }
     return (
       <ul className='note-trigger list-inline' onClick={(e) => this.handleClick(e)}>
-        <li onClick={() => changeToggle('new')} className='li-active'><i className='fa fa-paw' />最新动态</li>
-        <li onClick={() => changeToggle('notes')}><i className='fa fa-book' />Ta的笔记</li>
-        <li onClick={() => changeToggle('hot')}><i className='fa fa-fire' />热门</li>
+        <li onClick={() => changeToggle('new')} key='new' className='li-active'><i className='fa fa-paw' />最新动态</li>
+        <li onClick={() => changeToggle('notes')} key='notes'><i className='fa fa-book' />Ta的笔记</li>
+        <li onClick={() => changeToggle('hot')} key='hot'><i className='fa fa-fire' />热门</li>
         {rest}
       </ul>
     )

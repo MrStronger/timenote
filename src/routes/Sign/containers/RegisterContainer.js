@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { optionToRegister } from '../modules/register'
 import RegisterForm from '../components/Register/Index'
 
-const mapDispatchtoProps = {
+const mapDispatchToProps = {
   optionToRegister
 }
 
@@ -12,4 +12,4 @@ const mapStateToProps = (state) => ({
   asyncPhoneForm: state.form.asyncPhoneForm
 })
 
-export default connect(mapStateToProps, mapDispatchtoProps)(RegisterForm)
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm)

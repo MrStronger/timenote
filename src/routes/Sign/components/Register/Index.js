@@ -16,7 +16,7 @@ class RegisterForm extends React.Component {
     e.preventDefault()
   }
   componentDidMount () {
-
+    console.log(this.props)
   }
   handleClick (option) {
     this.props.optionToRegister(option)

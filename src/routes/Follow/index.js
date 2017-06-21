@@ -1,4 +1,5 @@
 import { injectReducer } from '../../store/reducers'
+import Authentication from '../../containers/Auth'
 
 export default (store) => ({
   path: 'follow',
@@ -9,7 +10,7 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Follow = require('./containers/FollowContainer').default
+      const Follow = Authentication(require('./containers/FollowContainer').default)
       const reducer = require('./modules/follow').default
 
       /*  Add the reducer to the store on key 'counter'  */

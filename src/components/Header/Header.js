@@ -62,7 +62,7 @@ class Header extends Component {
               <ul className='left list-inline hidden-xs nav-left' ref='userArea'>
                 <li><IndexLink to='/' activeClassName='active'>发现</IndexLink></li>
                 <li><Link to='/follow' activeClassName='active'>关注</Link></li>
-                <li><Link to='/hall' activeClassName='active'>名人堂</Link></li>
+                <li><Link to='/hall?all' activeClassName='active'>名人堂</Link></li>
               </ul>
               <ul className='right list-inline hidden-xs nav-right'>
                 {userAvatar}

@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export const Follow = (props) => (
-  <div>Follow</div>
-)
-
-Follow.propTypes = {
-
+class Follow extends Component {
+  componentDidMount () {
+    console.log('呵呵')
+  }
+  
+  render () {
+    return (
+      <div>
+        follow
+      </div>
+    )
+  }
 }
 
 export default Follow

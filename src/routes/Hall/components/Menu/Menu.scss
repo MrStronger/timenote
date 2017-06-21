@@ -1,0 +1,17 @@
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  background-color: #f9f9f9;
+  &>li{
+    padding: 0 10px;
+    cursor: pointer;
+    &:hover{
+      color: #ea6f5a;
+    }
+  }
+  .active{
+    color: #ea6f5a;
+  }
+}

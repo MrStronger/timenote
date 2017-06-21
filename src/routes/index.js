@@ -4,7 +4,7 @@ import Home from './Home'
 import FollowRoute from './Follow'
 import SignRoute from './Sign'
 import HallRoute from './Hall'
-import RouteRoute from './Route'
+import UserPageRoute from './UserPage'
 import PageNotFound from './PageNotFound'
 import Redirect from './PageNotFound/redirect'
 
@@ -19,7 +19,7 @@ export const createRoutes = (store) => ({
     FollowRoute(store),
     SignRoute(store),
     HallRoute(store),
-    RouteRoute(store),
+    UserPageRoute(store),
     PageNotFound(),
     Redirect
   ]

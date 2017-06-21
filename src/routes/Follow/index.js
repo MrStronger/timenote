@@ -1,25 +1,18 @@
 import { injectReducer } from '../../store/reducers'
-import Authentication from '../../containers/Auth'
 
 export default (store) => ({
   path: 'follow',
-  /*  Async getComponent is only invoked when route matches   */
+  onEnter (nextState, replace) {
+    if (!store.getState().auth.isAuth) {
+      replace('/sign')
+    }
+  },
   getComponent (nextState, cb) {
-    /*  Webpack - use 'require.ensure' to create a split point
-        and embed an async module loader (jsonp) when bundling   */
     require.ensure([], (require) => {
-      /*  Webpack - use require callback to define
-          dependencies for bundling   */
-      const Follow = Authentication(require('./containers/FollowContainer').default)
+      const Follow = require('./containers/FollowContainer').default
       const reducer = require('./modules/follow').default
-
-      /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { key: 'follow', reducer })
-
-      /*  Return getComponent   */
       cb(null, Follow)
-
-    /* Webpack named bundle   */
     }, 'follow')
   }
 })

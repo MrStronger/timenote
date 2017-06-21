@@ -16,21 +16,16 @@ export default class FollowToggle extends Component {
   handleToggle () {
     fetch('./index.php?s=/index/User/follow', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
       body: `followed_user_id=${this.props.follow_id}`,
       credentials: 'same-origin'
     }).then(response => {
       if (response.status >= 200 && response.status < 300) {
-        return response
+        this.setState({ isFollow: !this.state.isFollow })
       } else {
         var error = new Error(response.statusText)
         error.response = response
         throw error
       }
-    }).then(() => {
-      this.setState({ isFollow: !this.state.isFollow })
     }).catch(error => {
       console.log('request failed', error)
     })

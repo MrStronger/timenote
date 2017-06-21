@@ -1,0 +1,45 @@
+.note-top{
+	margin: 25px 0 15px 0;
+    .followToggle {
+    @extend .atr-option;
+    color: #683047;
+    right: 25px !important;
+    font-size: 16px;
+    &:hover{
+      color:#ea6f5a ;
+    }
+  }
+  .avatar{
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+  }
+  .name{
+    vertical-align: text-top;
+    font-size: 32px;
+  }
+  .follow{
+    color: #b4b4b4 !important;
+    top: 50%;
+    right: 5px;
+    transform: translate(0,-50%);
+  }
+  .atr-option{
+    padding: 5px 10px;
+    border: 1px solid #683047;
+    border-radius: 5px;
+    top: 50%;
+    right: 100px;
+    transform: translate(0,-50%);
+    &:hover{
+      border-color:#ea6f5a ;
+    }
+  }
+  .data {
+    margin: 5px;
+    a {
+      margin-right: 7px; 
+    }
+  }
+}
+

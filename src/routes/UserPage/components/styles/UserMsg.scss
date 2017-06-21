@@ -1,0 +1,78 @@
+.userMsg {
+  padding: 7%;
+  .user-img{
+    width: 100%;
+    border-radius: 4px;
+
+    .avatar{
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+
+      img{
+        border: none;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .user-msg{
+    .name{
+      color: #000;
+      vertical-align: baseline;
+      font-size: 30px;
+      margin: 5px 10px 5px 0;
+    }
+    .sex-age{
+      color:#a46b6b;
+    }
+    .signature{
+      color: #ababab;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .info{
+      margin-bottom: 10px;
+      a{
+        color: #5e5e5e;
+        font-size: 13px;
+        margin-right: 7px;
+      }
+    }
+    .introduction{
+      padding: 5px 10px;
+      font-size: 14px;
+      color: #969696;
+    }
+    h5{
+      &:first-of-type{
+        padding-top: 30px;
+        border-top: 1px solid #ddd;
+      }
+    }
+    .followToggle {
+      position: static;
+      display: inline-block;
+      transform: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      border: 1px solid #42c02e;
+      color: #42c02e;
+      border-radius: 4px;
+      background-color: #fff;
+      margin-bottom: 10px;
+    }
+    .medal {
+      padding-top: 10px;
+      a {
+        display: inline-block;
+        margin-right: 7px;
+        border: 1px solid #683047;
+        border-radius: 5px;
+        padding: 5px 7px;
+      }
+    }
+  }
+}

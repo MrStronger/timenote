@@ -1,22 +1,14 @@
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
-import { changeFollow, changeToggle } from '../modules/follow'
-import Follow from '../components/Follow'
-
+import { changeToggle } from '../modules/userPage'
+import UserPage from '../components/UserPage'
 
 const mapDispatchToProps = {
-  changeFollow,
   changeToggle
 }
 
-const getCurrentFollow = (state) => state.follow.currentFollow
-const getCurrentToggle = (state) => state.follow.currentToggle
-const changeFollowListener = createSelector(
-    [ getCurrentFollow ],
-    (followId) => {
-      return followId
-    }
-)
+const getCurrentToggle = (state) => state.userPage.currentToggle
+
 const changeToggleListener = createSelector(
   [ getCurrentToggle ],
   (toggleState) => {
@@ -24,8 +16,6 @@ const changeToggleListener = createSelector(
   }
 )
 const mapStateToProps = (state) => ({
-  user_id: state.auth.profile.user_id,
-  currentFollow: changeFollowListener(state),
   currentToggle: changeToggleListener(state)
 })
 
@@ -43,4 +33,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Follow)
+export default connect(mapStateToProps, mapDispatchToProps)(UserPage)

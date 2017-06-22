@@ -56,14 +56,14 @@ class CardCase extends Component {
           !this.props.isForAll ? '' : (
             <div className='card-header'>
               <h2>
-                <Link to={'/hall?' + this.props.field.search}>
+                <Link to={'/hall/' + this.props.field.search}>
                   <span onClick={() => this.props.fetchInItData(this.props.field)}>
                     {this.props.title}
                   </span>
                 </Link>
               </h2>
               <span onClick={() => this.props.fetchInItData(this.props.field)}>
-                <Link to={'/hall?' + this.props.field.search}>
+                <Link to={'/hall/' + this.props.field.search}>
                   查看全部
                 </Link>
               </span>

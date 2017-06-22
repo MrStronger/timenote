@@ -6,6 +6,9 @@ import ArticleToggle from '../../../components/ArticleToggle/ArticleToggle'
 import ArticleContainer from '../../../containers/ArticleContainer' // 这里应该引入container, 引入component是因为要测试
 
 export default class Follow extends Component {
+  state = {
+    rightSide: null
+  }
   static propTypes = {
     user_id: PropTypes.string.isRequired,
     currentFollow: PropTypes.string.isRequired,
@@ -13,19 +16,27 @@ export default class Follow extends Component {
     changeFollow: PropTypes.func.isRequired,
     changeToggle: PropTypes.func.isRequired
   }
+  componentWillReceiveProps (nextProps) {
+    const { currentFollow, currentToggle, changeToggle } = nextProps
+    console.log(currentFollow)
+    this.setState({
+      rightSide:
+        <div className='col-sm-9 col-md-8'>
+          <FollowMsg follow_id={currentFollow} />
+          <ArticleToggle sign={false} changeToggle={changeToggle} />
+          <ArticleContainer user_id={currentFollow} toggleState={currentToggle} />
+        </div>
+    })
+  }
   render () {
-    const { user_id, currentFollow, currentToggle, changeFollow, changeToggle } = this.props
+    const { user_id, changeFollow } = this.props
     return (
       <div className='container'>
         <div className='row'>
           <div className='col-sm-4 col-md-3 col-md-offset-1'>
             <FollowNav user_id={user_id} changeFollow={changeFollow} />
           </div>
-          <div className='col-sm-9 col-md-8'>
-            <FollowMsg follow_id={currentFollow} />
-            <ArticleToggle sign={false} changeToggle={changeToggle} />
-            <ArticleContainer user_id={currentFollow} toggleState={currentToggle} />
-          </div>
+          {this.state.rightSide}
         </div>
       </div>
     )

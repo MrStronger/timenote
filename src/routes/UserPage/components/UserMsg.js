@@ -2,30 +2,31 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import FollowToggle from '../../../components/FollowToggle/FollowToggle'
 import './styles/UserMsg.scss'
+import { ajax } from '../../../tools/Ajax'
 
 export default class UserMsg extends Component {
   state = {
-    data: userMsg
+    data: {
+      user_id: '',
+      isFollow: false,
+      medal: [],
+      data: {
+        articleNum: 0,
+        follow: 0,
+        like: 0,
+        love: 0
+      }
+    }
   }
   static propTypes = {
+    mainUserId: PropTypes.string.isRequired,
     user_id: PropTypes.string.isRequired
   }
-  componentDidMount () {
-    /*fetch('./index.php?s=/index/User/detail', {
-      method: 'POST',
-      body: `${this.props.user_id}`
-    }).then(res => {
-      if (res.ok) {
-        const data = JSON.parse(res.json())
-        if (data.status === 200 && data.returnMsg === 'OK') {
-          this.setState({ data: data })
-        } else {
-          console.log('request failed', res.statusText)
-        }
-      }
-    }).catch((err) => console.log('src/routes/Follow/components/FollowMsg.js', err)) */
+  componentWillMount () {
+    ajax(this, `u/${this.props.user_id}`, 'src/routes/Follow/components/FollowMsg.js')
   }
   render () {
+    const { mainUserId, user_id } = this.props
     const data = this.state.data
     let medals = []
     data.medal.forEach((item, index) => {
@@ -47,14 +48,14 @@ export default class UserMsg extends Component {
             <a><i className='fa fa-thumbs-up' />{data.data.like}</a>
             <a><i className='fa fa-heart' />{data.data.love}</a>
           </p>
-          <FollowToggle follow_id='csc' />
+          {user_id === mainUserId ? null : <FollowToggle follow_id={data.user_id} isFollow={data.isFollow} />}
           <h5>个人介绍</h5>
           <p className='introduction'>
-                  {data.introduction}
+            {data.introduction}
           </p>
           <h5>个人成就</h5>
           <p className='introduction'>
-                  {data.achievement}
+            {data.achievement}
           </p>
           <h5>获得勋章</h5>
           <div className='medal text-center'>

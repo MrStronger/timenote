@@ -9,7 +9,7 @@ function submit (values, dispatch) {
   // 处理values
   return sleep(1000).then(() => {
     let profile = {
-      user_id: 'dssdvsvd',
+      user_id: 'mofan12138',
       link: '/u/mofan12138',
       img: 'http://upload.jianshu.io/users/upload_avatars/1517038/de700590cd50.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96',
       userName: 'mofan',

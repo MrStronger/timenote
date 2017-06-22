@@ -3,14 +3,14 @@ import { createSelector } from 'reselect'
 import { changeFollow, changeToggle } from '../modules/follow'
 import Follow from '../components/Follow'
 
-
 const mapDispatchToProps = {
   changeFollow,
-  changeToggle
+  changeToggle,
 }
 
 const getCurrentFollow = (state) => state.follow.currentFollow
 const getCurrentToggle = (state) => state.follow.currentToggle
+
 const changeFollowListener = createSelector(
     [ getCurrentFollow ],
     (followId) => {
@@ -23,10 +23,11 @@ const changeToggleListener = createSelector(
     return toggleState
   }
 )
+
 const mapStateToProps = (state) => ({
   user_id: state.auth.profile.user_id,
   currentFollow: changeFollowListener(state),
-  currentToggle: changeToggleListener(state)
+  currentToggle: changeToggleListener(state),
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

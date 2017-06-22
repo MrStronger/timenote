@@ -27,7 +27,7 @@ export default class ArticleItem extends Component {
             <a className='avatar inlineblock' target='_blank' href={user.link}>
               <img src={user.img} alt={user.userName} />
             </a>
-            <a className='authorName' target='_blank' href={user.link}>冬洱</a>
+            <a className='authorName' target='_blank' href={user.link}>{user.userName}</a>
             <span className='time'>{time}</span>
 
           </div>

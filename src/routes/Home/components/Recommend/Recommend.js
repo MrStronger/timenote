@@ -27,7 +27,7 @@ export default class Recommend extends Component {
               {' '}
               <i className='fa fa-eye' />{item.follow}
             </span>
-            <FollowToggle follow_id={item.id} />
+            <FollowToggle follow_id={item.id} isFollow={item.isFollow}/>
           </div>
         )
       } else {
@@ -35,7 +35,7 @@ export default class Recommend extends Component {
         recommends.push(
           <div key={item.id} className='relative author-container'>
             <a href={item.link} className='avatar left'><img src={item.img} /></a>
-            <FollowToggle follow_id={item.id} className='followToggle' />
+            <FollowToggle follow_id={item.id} className='followToggle' isFollow={item.isFollow} />
             <a href={item.link} className='name'>{item.userName}</a>
             <p className='info'>
               <a className='icon-set'><i className='fa fa-pencil' />{item.writeNum}</a>

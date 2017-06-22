@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Recommend from '../components/Recommend/Recommend'
+import { ajax } from '../../../tools/Ajax'
 
 export default class RecommendContainer extends Component {
   constructor () {
     super()
     this.state = {
       data: {
-        labelData: labelData,
-        authorData: authorData
+        labelData: [],
+        authorData: []
       }
     }
   }
@@ -16,16 +17,7 @@ export default class RecommendContainer extends Component {
     type: PropTypes.oneOf(['labels', 'authors'])
   }
   getAnother () {
-    /*fetch('/getAnther.json').then(res => {
-      if (res.ok) {
-        const data = JSON.parse(res.json())
-        if (data.status === 200 && data.returnMsg === 'OK') {
-          this.setState({ data: data })
-        } else {
-          console.log('request failed', res.statusText)
-        }
-      }
-    }).catch((err) => console.log('src/routes/Follow/containers/RecommendContainer.js', err))*/
+    ajax(this, 'index/followRecommend/list', 'src/routes/Follow/containers/RecommendContainer.js')
   }
   componentDidMount () {
     this.getAnother()

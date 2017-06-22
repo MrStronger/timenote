@@ -8,6 +8,7 @@ const mapDispatchToProps = {
 }
 
 const getCurrentToggle = (state) => state.userPage.currentToggle
+const getUserId = (state) => state.auth.isAuth ? state.auth.profile.user_id : ''
 
 const changeToggleListener = createSelector(
   [ getCurrentToggle ],
@@ -15,7 +16,14 @@ const changeToggleListener = createSelector(
     return toggleState
   }
 )
+const userIdListener = createSelector(
+  [ getUserId ],
+  (userId) => {
+    return userId
+  }
+)
 const mapStateToProps = (state) => ({
+  user_id: userIdListener(state),
   currentToggle: changeToggleListener(state)
 })
 

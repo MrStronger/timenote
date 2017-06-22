@@ -1,29 +1,24 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ArticleItem from '../components/ArticleItem/ArticleItem'
+import { ajax } from '../tools/Ajax'
 
 export default class ArticleContainer extends Component {
   state = {
-    data: articleData
+    data: []
   }
   static propTypes = {
     user_id: PropTypes.string.isRequired,
     toggleState: PropTypes.string.isRequired
   }
-  componentDidMount () {
-    /*fetch('./index.php?s=/index/Article/list', {
-      method: 'POST',
-      body: `${this.props.user_id}&${this.props.toggleState}`
-    }).then(res => {
-      if (res.ok) {
-        const data = JSON.parse(res.json())
-        if (data.status === 200 && data.returnMsg === 'OK') {
-          this.setState({ data: data })
-        } else {
-          console.log('request failed', res.statusText)
-        }
-      }
-    }).catch((err) => console.log('src/containers/ArticleContainer', err))*/
+  getData (props) {
+    ajax(this, `a/${props.user_id}&${props.toggleState}`, 'src/containers/ArticleContainer.js')
+  }
+  componentWillMount () {
+    this.getData(this.props)
+  }
+  componentWillReceiveProps (nextProps) {
+    this.getData(nextProps)
   }
   render () {
     let articleItems = []

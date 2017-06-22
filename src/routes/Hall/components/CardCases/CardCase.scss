@@ -16,13 +16,14 @@
       margin-bottom: 40px;
     }
   }
-  .loading{
-      position: relative;
-    }
   @media (min-width: 768px) and (max-width: 970px) {
     .card-case{
       width: 90%;
-
+      margin: 0 auto;
+    }
+    .card-header{
+      width: 90%;
+      margin: 0 auto;
     }
   }
 }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import FollowToggle from '../../../components/FollowToggle2/FollowToggle'
+import FollowToggle from '../components/FollowToggle/FollowToggle'
 
 import { fetchAddAttention, fetchCancelAttention } from '../modules/cardCase'
 

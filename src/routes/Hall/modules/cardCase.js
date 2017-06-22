@@ -1,5 +1,5 @@
 // 对数组去重
-import { unique } from '../../../util/array'
+import { unique } from '../../../tools/array'
 
 export const SET_VISIBILITY_FILTERS = 'SET_VISIBILITY_FILTERS'
 export const RECEIVE_INIT_DATA = 'UPDATE'

@@ -29,9 +29,69 @@ export const MenuData = [
     number: 'edit_number'
   },
   {
-    title: '经济与管理学院',
-    filter: 'SHOW_JINGJI',
-    search: 'jinguan'
+    title: '通院',
+    filter: 'SHOW_TONGYUAN',
+    search: 'tongyuan'
+  },
+  {
+    title: '电院',
+    filter: 'SHOW_DIANYUAN',
+    search: 'dianyuan'
+  },
+  {
+    title: '计院',
+    filter: 'SHOW_JIYUAN',
+    search: 'jiyuan'
+  },
+  {
+    title: '机电院',
+    filter: 'SHOW_JIDIANYUAN',
+    search: 'jidianyuan'
+  },
+  {
+    title: '微电院',
+    filter: 'SHOW_WEIDIANYUAN',
+    search: 'weidianyuan'
+  },
+  {
+    title: '经管',
+    filter: 'SHOW_JINGGUAN',
+    search: 'jingguanyuan'
+  },
+  {
+    title: '人文',
+    filter: 'SHOW_RENWEN',
+    search: 'renwen'
+  },
+  {
+    title: '外国语',
+    filter: 'SHOW_WAIGUOYU',
+    search: 'waiguoyu'
+  },
+  {
+    title: '软院',
+    filter: 'SHOW_RUANYUAN',
+    search: 'ruanyuan'
+  },
+  {
+    title: '网信',
+    filter: 'SHOW_WANGXIN',
+    search: 'wangxin'
+  },
+  {
+    title: '材料',
+    filter: 'SHOW_CAILIAO',
+    search: 'cailiao'
+  },
+  {
+    title: '马克思主义学院',
+    filter: 'SHOW_MKS',
+    search: 'makesi'
+  },
+  {
+    title: '生科院',
+    filter: 'SHOW_SHENGKEYUAN',
+    search: 'shengke'
   }
 ]
 

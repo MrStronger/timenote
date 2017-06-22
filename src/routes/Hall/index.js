@@ -9,5 +9,16 @@ export default (store) => ({
       injectReducer(store, { key: 'hall', reducer })
       cb(null, Hall)
     })
-  }
+  },
+  childRoutes: [
+    {
+      path: '/hall/:search',
+      getComponent (nextState, cb) {
+        require.ensure([], (require) => {
+          const ItemPage = require('./containers/ItemPageContainer').default
+          cb(null, ItemPage)
+        })
+      }
+    }
+  ]
 })

@@ -6,7 +6,7 @@ import LoginForm from '../components/Login/LoginForm'
 const mapDispatchtoProps = {
   fetchLogin
 }
-
+console.log(mapDispatchtoProps)
 const mapStateToProps = (state) => ({
 
 })

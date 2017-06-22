@@ -12,11 +12,10 @@
   }
   .slider-item{
     display: inline-block;
-    height: auto;
+    height:100%;
     cursor: pointer;
     &>a>img {
-      display: block;
-      height: auto;
+      display: inline-block;
       width: 100%;
     }
   }

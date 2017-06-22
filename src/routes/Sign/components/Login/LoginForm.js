@@ -16,6 +16,9 @@ class LoginForm extends React.Component {
     submitting: PropTypes.bool,
     error: PropTypes.string
   }
+  componentDidMount () {
+    console.log(this.props)
+  }
   render () {
     const { handleSubmit, submitting, error } = this.props
     return (

@@ -5,5 +5,5 @@ import signOption from './sign'
 
 export default combineReducers({
   signOption: signOption,
-  registerOption: registerOption
+  registerOption: registerOption,
 })

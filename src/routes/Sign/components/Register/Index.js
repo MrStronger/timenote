@@ -37,12 +37,12 @@ class RegisterForm extends React.Component {
         {
           this.props.option === 'phone' ? <PhoneRegister asyncPhoneForm={this.props.asyncPhoneForm} /> : <EmailRegister />
         }
-        <div className='option'>
+        {/* <div className='option'>
           <div>其他注册方式</div>
           <ul>
             {options}
           </ul>
-        </div>
+      </div> */}
       </div>
     )
   }

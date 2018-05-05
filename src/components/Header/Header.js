@@ -34,7 +34,7 @@ class Header extends Component {
     if (isAuth) {
       userAvatar = [<li key='user' className='dropdown'>
         <Link to={profile.link}>
-          <img src={profile.img} alt={profile.userName} />
+          <img src={profile.img} alt={profile.username} />
         </Link>
 
         <ul className='dropdown-menu' role='menu'>

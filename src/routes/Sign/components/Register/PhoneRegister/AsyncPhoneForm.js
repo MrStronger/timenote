@@ -73,11 +73,11 @@ class PhoneRegister extends React.Component {
   }
   render () {
     const { handleSubmit, submitting, error } = this.props
-    let text = this.state.start ? '重新发送(' + this.state.count + ')' : '发送验证码'
+    /* let text = this.state.start ? '重新发送(' + this.state.count + ')' : '发送验证码'
     const verify = {
       requestAuthCode: this.requestAuthCode,
       text: text
-    }
+    } */
     return (
       <form className='form' onSubmit={handleSubmit(submit)}>
         <Field
@@ -96,12 +96,13 @@ class PhoneRegister extends React.Component {
           async
         />
         <Field
-          name='code'
-          type='text'
-          icon='shield'
+          name='email'
+          type='email'
+          icon='envelope'
           component={renderField}
-          label='验证码'
-          verify={verify}
+          label='输入你的邮箱'
+          async
+          
           />
         <Field
           name='password'

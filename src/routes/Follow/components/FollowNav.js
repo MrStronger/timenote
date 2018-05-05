@@ -14,7 +14,7 @@ export default class FollowNav extends Component {
     }
   }
   static propTypes = {
-    user_id: PropTypes.string.isRequired,
+    uid: PropTypes.string.isRequired,
     changeFollow: PropTypes.func.isRequired
   }
   handleActive (e) {
@@ -28,14 +28,14 @@ export default class FollowNav extends Component {
     }
   }
   componentDidMount () {
-    fetch(`https://easy-mock.com/mock/5947a6428ac26d795f3f8e99/timenote/follow/list/${this.props.user_id}`)
+    fetch(`https://easy-mock.com/mock/5947a6428ac26d795f3f8e99/timenote/follow/list/${this.props.uid}`)
       .then(res => {
         if (res.status >= 200 && res.status < 300) {
           return res.json()
         }
       }).then(data => {
         if (data.status === 200 && data.statusText === 'OK') {
-          this.props.changeFollow(data.data[0].user_id)
+          this.props.changeFollow(data.data[0].uid)
           this.setState({ data: data.data })
         } else {
           console.log('request failed')
@@ -49,7 +49,7 @@ export default class FollowNav extends Component {
   content (index, item) {
     const { changeFollow } = this.props
     return (
-      <li key={index} onClick={() => changeFollow(item.user_id)}>
+      <li key={index} onClick={() => changeFollow(item.uid)}>
         <a className='avatar inlineblock'><img src={item.img} alt={item.name} /></a>
         <a className='name'>{item.name}</a>
       </li>
@@ -109,19 +109,19 @@ export default class FollowNav extends Component {
 let followData = [
   {
     type: 'author',
-    user_id: '1',
+    uid: '1',
     img: 'http://upload.jianshu.io/users/upload_avatars/6287/06c537002583.png?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120',
     name: '刘淼'
   },
   {
     type: 'author',
-    user_id: '2',
+    uid: '2',
     img: 'http://upload.jianshu.io/users/upload_avatars/6287/06c537002583.png?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120',
     name: '王二哈'
   },
   {
     type: 'author',
-    user_id: '3',
+    uid: '3',
     img: 'http://upload.jianshu.io/users/upload_avatars/6287/06c537002583.png?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120',
     name: '马男'
   }

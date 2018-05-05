@@ -10,7 +10,7 @@ export default class Follow extends Component {
     rightSide: null
   }
   static propTypes = {
-    user_id: PropTypes.string.isRequired,
+    uid: PropTypes.string.isRequired,
     currentFollow: PropTypes.string.isRequired,
     currentToggle: PropTypes.string.isRequired,
     changeFollow: PropTypes.func.isRequired,
@@ -24,17 +24,17 @@ export default class Follow extends Component {
         <div className='col-sm-9 col-md-8'>
           <FollowMsg follow_id={currentFollow} />
           <ArticleToggle sign={false} changeToggle={changeToggle} />
-          <ArticleContainer user_id={currentFollow} toggleState={currentToggle} />
+          <ArticleContainer uid={currentFollow} toggleState={currentToggle} />
         </div>
     })
   }
   render () {
-    const { user_id, changeFollow } = this.props
+    const { uid, changeFollow } = this.props
     return (
       <div className='container'>
         <div className='row'>
           <div className='col-sm-4 col-md-3 col-md-offset-1'>
-            <FollowNav user_id={user_id} changeFollow={changeFollow} />
+            <FollowNav uid={uid} changeFollow={changeFollow} />
           </div>
           {this.state.rightSide}
         </div>

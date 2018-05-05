@@ -7,7 +7,7 @@ import { ajax } from '../../../tools/Ajax'
 export default class UserMsg extends Component {
   state = {
     data: {
-      user_id: '',
+      uid: '',
       isFollow: false,
       medal: [],
       data: {
@@ -20,13 +20,13 @@ export default class UserMsg extends Component {
   }
   static propTypes = {
     mainUserId: PropTypes.string.isRequired,
-    user_id: PropTypes.string.isRequired
+    uid: PropTypes.string.isRequired
   }
   componentWillMount () {
-    ajax(this, `u/${this.props.user_id}`, 'src/routes/Follow/components/FollowMsg.js')
+    ajax(this, `u/${this.props.uid}`, 'src/routes/Follow/components/FollowMsg.js')
   }
   render () {
-    const { mainUserId, user_id } = this.props
+    const { mainUserId, uid } = this.props
     const data = this.state.data
     let medals = []
     data.medal.forEach((item, index) => {
@@ -48,7 +48,7 @@ export default class UserMsg extends Component {
             <a><i className='fa fa-thumbs-up' />{data.data.like}</a>
             <a><i className='fa fa-heart' />{data.data.love}</a>
           </p>
-          {user_id === mainUserId ? null : <FollowToggle follow_id={data.user_id} isFollow={data.isFollow} />}
+          {uid === mainUserId ? null : <FollowToggle follow_id={data.uid} isFollow={data.isFollow} />}
           <h5>个人介绍</h5>
           <p className='introduction'>
             {data.introduction}
@@ -67,7 +67,7 @@ export default class UserMsg extends Component {
   }
 }
 let userMsg = {
-  user_id: 'mofan12138',
+  uid: 'mofan12138',
   nickname: '莫凡',
   user_img: 'http://upload.jianshu.io/users/upload_avatars/6287/06c537002583.png?imageMogr2/auto-orient/strip|imageView2/1/w/144/h/144',
   age: 19,

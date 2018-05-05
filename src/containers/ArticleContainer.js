@@ -8,11 +8,11 @@ export default class ArticleContainer extends Component {
     data: []
   }
   static propTypes = {
-    user_id: PropTypes.string.isRequired,
+    uid: PropTypes.string.isRequired,
     toggleState: PropTypes.string.isRequired
   }
   getData (props) {
-    ajax(this, `a/${props.user_id}&${props.toggleState}`, 'src/containers/ArticleContainer.js')
+    ajax(this, `a/${props.uid}&${props.toggleState}`, 'src/containers/ArticleContainer.js')
   }
   componentWillMount () {
     this.getData(this.props)

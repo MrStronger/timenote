@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
           type='text'
           icon='user'
           component={renderField}
-          label='输入你的手机号或邮箱'
+          label='输入你的用户名'
         />
         <Field
           name='password'

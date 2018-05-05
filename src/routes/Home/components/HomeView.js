@@ -12,7 +12,7 @@ export const HomeView = () => {
         <div className='row'>
           <div className='col-xs-13 col-sm-9 col-md-9 ipad-class'>
             <Slider items={images} />
-            <ArticleContainer user_id='' toggleState='' />
+            <ArticleContainer uid='' toggleState='' />
           </div>
           <div className='hidden-xs col-sm-4 col-md-4 ipad-class'>
             <Recommend type='authors' />
@@ -30,7 +30,7 @@ export const HomeView = () => {
           </div>
           <div className='col-xs-13 col-sm-7 col-md-7 mainBody'>
             <Slider items={images} />
-            <ArticleContainer user_id='' toggleState='' />
+            <ArticleContainer uid='' toggleState='' />
           </div>
           <div className='hidden-xs col-sm-3 col-md-3 recommendAuthors'>
             <Recommend type='authors' />

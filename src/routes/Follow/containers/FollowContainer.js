@@ -25,7 +25,7 @@ const changeToggleListener = createSelector(
 )
 
 const mapStateToProps = (state) => ({
-  user_id: state.auth.profile.user_id,
+  uid: state.auth.profile.uid,
   currentFollow: changeFollowListener(state),
   currentToggle: changeToggleListener(state),
 })

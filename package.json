@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha",
+    "braft-editor": "^1.8.12",
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "font-awesome": "^4.7.0",

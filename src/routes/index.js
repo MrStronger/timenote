@@ -5,6 +5,7 @@ import FollowRoute from './Follow'
 import SignRoute from './Sign'
 import HallRoute from './Hall'
 import UserPageRoute from './UserPage'
+import WriteRoute from './Write'
 import PageNotFound from './PageNotFound'
 import Redirect from './PageNotFound/redirect'
 
@@ -20,6 +21,7 @@ export const createRoutes = (store) => ({
     SignRoute(store),
     HallRoute(store),
     UserPageRoute(store),
+    WriteRoute(store),
     PageNotFound(),
     Redirect
   ]

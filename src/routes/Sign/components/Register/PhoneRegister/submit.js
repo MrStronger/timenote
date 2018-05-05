@@ -9,7 +9,7 @@ function submit (values, dispatch) {
   // 处理values
   debugger
   dispatch(startRequestRegister())
-  return fetch('/index.php?s=/index/user/register', {
+  return fetch('/back/index.php?s=/index/user/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

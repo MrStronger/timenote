@@ -15,9 +15,13 @@ function submit (values, dispatch) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values)
-  }).then((profile) => {
-    dispatch(recieveRegisterSuccess(profile))
-    browserHistory.push('/')
+  }).then((data) => {
+    if (data.code === -1) {
+      alert('密码错误')
+    } else if (data.code === 0) {
+      dispatch(recieveRegisterSuccess(data.msg))
+      browserHistory.push('/')
+    }
   }).catch(err => {
     console.log(err)
     throw new SubmissionError({

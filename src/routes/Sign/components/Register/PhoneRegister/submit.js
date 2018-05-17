@@ -16,6 +16,7 @@ function submit (values, dispatch) {
     },
     body: JSON.stringify(values)
   }).then((data) => {
+    debugger
     if (data.code === -1) {
       alert('密码错误')
     } else if (data.code === 0) {

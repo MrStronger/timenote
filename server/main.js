@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const webpack = require('webpack')
+var proxy = require('http-proxy-middleware')
 const logger = require('../build/lib/logger')
 const webpackConfig = require('../build/webpack.config')
 const project = require('../project.config')
@@ -29,6 +30,7 @@ if (project.env === 'development') {
     path: '/__webpack_hmr'
   }))
 
+  app.use('/', proxy({ target: 'http://timenote.ink19.cn', changeOrigin: true }))
   // Serve static assets from ~/public since Webpack is unaware of
   // these files. This middleware doesn't need to be enabled outside
   // of development since this directory will be copied into ~/dist

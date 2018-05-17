@@ -15,7 +15,12 @@ function submit (values, dispatch) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(values)
+  }).then(res => {
+    if (res.status >= 200 && res.status < 300) {
+      return res.json()
+    }
   }).then((data) => {
+    debugger
     if (data.code === -1) {
       alert('密码错误')
     } else if (data.code === 0) {

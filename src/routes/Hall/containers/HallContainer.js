@@ -1,13 +1,15 @@
 import { connect } from 'react-redux'
-import { plus } from './../modules/hall'
 
 import Hall from './../components/Hall'
 
+import { fetchInItData } from '../modules/cardCase'
+
 const mapDispatchtoProps = {
-  plus
+  fetchInItData
 }
 
 const mapStateToProps = (state) => ({
+  MenuOption: state.hall.CardData.MenuOption,
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(Hall)

@@ -1,0 +1,57 @@
+.follow-tab {
+  margin-top: 50px;
+  border-right: 1px solid #ddd;
+  .title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #969696;
+  }
+  .follow-nav {
+    > li {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-right: -4px;
+      cursor: pointer;
+      &.active {
+        border: 1px solid #ddd;
+        border-bottom: 1px solid #fff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        margin-bottom: -1px;
+        z-index: 1;
+        color: #ea6f5a !important;
+      }
+    }
+    
+  }
+  .content{
+    max-height: 800px;
+    overflow: auto;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    
+    li{
+      font-size: 14px;
+      color: #969696;
+      padding: 5px 10px;
+      border-bottom: 1px solid #f9f9f9;
+      cursor: pointer;
+      &:hover{
+        background-color: #dcdcdc !important;
+      }
+      &:first-child {
+        background-color: #dcdcdc;
+      }
+      .avatar{
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      .name {
+        vertical-align: middle;
+      }
+    }
+    
+  }
+  
+}

@@ -3,7 +3,6 @@ import { browserHistory, Router } from 'react-router'
 import { Provider } from 'react-redux'
 
 class AppContainer extends Component {
-
   shouldComponentUpdate () {
     return false
   }

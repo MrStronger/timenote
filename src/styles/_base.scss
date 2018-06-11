@@ -37,7 +37,7 @@ th, td {
     padding: 0;
 }
 body,div,button,input {
-	font-family: FontAwesome,"SF UI Text",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	color: $global-color;
 }
 button, input, select, textarea {
@@ -49,8 +49,8 @@ h1 {
 	margin: .67em 0;
   	font-size: 2em;
 }
-h2 { font-size: 16px; }
-h3 { font-size: 14px; }
+h2 { font-size: 18px; margin: .34em 0;}
+h3 { font-size: 16px; margin: .17em 0;}
 h4, h5, h6 { font-size: 100%; }
 
 address, cite, dfn, em, var { font-style: normal; }

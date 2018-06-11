@@ -1,0 +1,18 @@
+.followToggle {
+      color: #42c02e; 
+      font-size: 14px;
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translate(0,-50%);
+      cursor: pointer;
+      &:hover {
+        color: #5af940;
+      }
+      .followed {
+        font-style: normal;
+        color: #969696;
+        background-color: 1px solid #bcbcbc; 
+        border-color: #969696;
+      }
+  }

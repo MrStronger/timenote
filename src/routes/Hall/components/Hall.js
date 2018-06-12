@@ -29,24 +29,21 @@ export default class Hall extends Component {
 }
 
 const sliderData = [
+  
   {
-    src: require('../../../../public/images/02.jpg'),
-    alt: '2图'
-  },
-  {
-    src: require('../../../../public/images/01.jpg'),
+    src: require('../../../../public/images/88.png'),
     alt: '名人堂'
   },
   {
-    src: require('../../../../public/images/03.jpg'),
-    alt: '6图'
-  },
-  {
-    src: require('../../../../public/images/02.jpg'),
-    alt: '2图'
-  },
-  {
-    src: require('../../../../public/images/01.jpg'),
+    src: require('../../../../public/images/88.png'),
     alt: '名人堂'
-  }
+  },
+  {
+    src: require('../../../../public/images/88.png'),
+    alt: '名人堂'
+  },
+  {
+    src: require('../../../../public/images/88.png'),
+    alt: '名人堂'
+  },
 ]

@@ -6,6 +6,7 @@ import './CardCaseItem.scss'
 import FollowToggles from '../../../containers/FollowToggleContainer'
 import Meta from '../../../../../components/Meta/Meta'
 
+
 class CardCaseItem extends Component {
   static propTypes = {
 

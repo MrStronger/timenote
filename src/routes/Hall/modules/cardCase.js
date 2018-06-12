@@ -54,7 +54,16 @@ export function fetchInItData (field) {
   let { search, filter } = field
   return (dispatch) => {
     dispatch(setVisibilityFilters(filter))
-    return fetch('https://www.easy-mock.com/mock/59476de18ac26d795f3d5afa/timeNote/stars/' + search)
+    let newArray = unique(DATA)
+    if (search === 'all') {
+      // 去重操作
+      
+      dispatch(receiveInItData(newArray))
+    } else {
+      dispatch(receiveInItData(newArray))
+    }
+  }
+    /* return fetch('https://www.easy-mock.com/mock/59476de18ac26d795f3d5afa/timeNote/stars/' + search)
       .then(response => response.json())
       .then(response => {
         if (search === 'all') {
@@ -65,8 +74,7 @@ export function fetchInItData (field) {
         } else {
           dispatch(receiveInItData(response.data))
         }
-      })
-  }
+      }) */
 }
 
 export function fetchAddAttention (action) {
@@ -87,11 +95,12 @@ export function fetchCancelAttention (action) {
 export function fetchUpdate (search) {
   return (dispatch) => {
     dispatch(startUpdate())
-    return fetch('https://www.easy-mock.com/mock/59476de18ac26d795f3d5afa/timeNote/stars/' + search)
+    dispatch(upDateData(DATA))
+    /* return fetch('https://www.easy-mock.com/mock/59476de18ac26d795f3d5afa/timeNote/stars/' + search)
       .then(response => response.json())
       .then(response => {
         dispatch(upDateData(response.data))
-      })
+      }) */
   }
 }
 
@@ -147,3 +156,198 @@ export default function (state = initialState, action) {
       return state
   }
 }
+
+var DATA = [
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/zuming.jpg',
+    userName: '张同学',
+    index: 0,
+    id: 'cdsc',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2Fvarsha.png',
+    userName: '张同学',
+    index: 2,
+    id: 'sdcsd',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E5%98%89%E6%B1%9B%E5%A4%A7.jpg',
+    userName: '张同学',
+    index: 3,
+    id: 'gbfgb',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/xiaolv.jpg',
+    userName: '张同学',
+    index: 4,
+    id: 'vdsfv',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/zhanfang1.jpg',
+    userName: '张同学',
+    index: 5,
+    id: 'bgfb',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E8%B6%85%E5%87%A1%E5%A4%A7.jpg',
+    userName: '张同学',
+    index: 6,
+    id: 'tyjt',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/wangbing.jpg',
+    userName: '张同学',
+    index: 7,
+    id: 'ewdwef',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/zuming.jpg',
+    userName: '张同学',
+    index: 8,
+    id: 'rhrhrtht',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E5%BC%A0%E6%80%9D%E8%BF%9C%E5%B0%8F.jpeg',
+    userName: '张同学',
+    index: 9,
+    id: 'ferfe',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/xh-big.jpg',
+    userName: '张同学',
+    index: 10,
+    id: 'evsdvsd',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi/sunwei.png',
+    userName: '张同学',
+    index: 11,
+    id: 'sdva',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E5%A3%AB%E5%85%A8%E5%A4%A7.jpg',
+    userName: '张同学',
+    index: 12,
+    id: 'fvdfb',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E5%91%A8%E6%95%8F%E5%A4%A7.jpeg',
+    userName: '张同学',
+    index: 13,
+    id: 'sdcsdcsd',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E6%AE%BF%E6%96%8C%E5%A4%A7.jpg',
+    userName: '张同学',
+    index: 14,
+    id: 'awdq',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E4%BB%98%E5%A8%9C%E5%A4%A7.jpg',
+    userName: '张同学',
+    index: 15,
+    id: 'bgbf',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+  {
+    img: 'https://eopa.bdstatic.com/daoshi%2F%E5%BC%A0%E5%8D%93%E5%BD%AC%E5%A4%A7.jpg',
+    userName: '张同学',
+    index: 16,
+    id: 'ytyt',
+    isFollow: true,
+    edit_number: 234,
+    star_number: 3432,
+    like_number: 435,
+    praise_number: 34,
+    tags: ['技术大神, 学霸']
+  },
+]

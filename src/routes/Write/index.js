@@ -3,12 +3,12 @@ import { injectReducer } from '../../store/reducers'
 export default (store) => ({
   path: '/write',
 
-  /* onEnter (nextState, replace) {
+  onEnter (nextState, replace) {
     if (!store.getState().auth.isAuth) {
       replace('/sign')
     }
   },
- */
+
   getComponent (nextState, cb) {
     require.ensure([], (require) => {
       const WriteContainer = require('./containers/WriteContainer').default

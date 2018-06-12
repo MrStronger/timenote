@@ -1,5 +1,6 @@
 
 .write {
+    margin-bottom: 50px;
     .title-input-container{
         margin: 16px 0;
     }
@@ -18,6 +19,30 @@
     .BraftEditor-controlBar {
         border-top: 1px solid #bbb;
         border-bottom: 1px solid #bbb;
+    }
+    .BraftEditor-content {
+        border-bottom: 1px solid #bbb;
+        margin-bottom: 20px;
+    }
+    .ant-tag-checkable-checked {
+        background-color: #683047;
+    }
+    .ant-tag-checkable:not(.ant-tag-checkable-checked):hover {
+        color: #855168;
+    }
+    .publish {
+        border: 1px solid #855168;
+        background-color: #683047;
+        padding: 10px 15px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            
+            background-color: #A68091;
+        }
     }
 
 }

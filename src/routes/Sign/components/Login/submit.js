@@ -3,7 +3,6 @@ import { browserHistory } from 'react-router'
 
 import { START_REQUEST_LOGIN, RECEIVE_LOGIN_SUCCESS, RECEIVE_LOGIN_FAIL, startRequestLogin, receieveLoginSuccess, receieveLoginFail } from '../../../../store/auth'
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 function submit (values, dispatch) {
   // 处理values
@@ -11,6 +10,7 @@ function submit (values, dispatch) {
   dispatch(startRequestLogin())
   return fetch('/back/index.php?s=/index/user/login', {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -22,7 +22,7 @@ function submit (values, dispatch) {
   }).then((data) => {
     debugger
     if (data.code === -1) {
-      alert('密码错误')
+      alert(data.msg || '账号或密码错误')
     } else if (data.code === 0) {
       dispatch(receieveLoginSuccess(data.msg))
       browserHistory.push('/')

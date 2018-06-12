@@ -24,7 +24,7 @@ class Header extends Component {
     res.style.height === '0px' ? res.style.height = '30px' : res.style.height = '0px'
   }
   onSignOutClick () {
-    const { onSignOut } =this.props
+    const { onSignOut } = this.props
     onSignOut()
     this.props.router.push('/')
   }
@@ -33,12 +33,12 @@ class Header extends Component {
     let userAvatar = []
     if (isAuth) {
       userAvatar = [<li key='user' className='dropdown'>
-        <Link to={profile.link}>
+        <Link to={`/u/${profile.uid}`}>
           <img src={profile.img} alt={profile.username} />
         </Link>
 
         <ul className='dropdown-menu' role='menu'>
-          <li><Link to={profile.link}><i className='fa fa-user' />个人主页</Link></li>
+          <li><Link to={`/u/${profile.uid}`}><i className='fa fa-user' />个人主页</Link></li>
           <li><Link to='/'><i className='fa fa-bell' style={{ marginLeft: '-2px' }} />消息</Link></li>
           <li><Link onClick={() => this.onSignOutClick()}><i className='fa fa-sign-out' />退出登录</Link></li>
         </ul>

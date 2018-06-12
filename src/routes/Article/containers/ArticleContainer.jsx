@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
-import { saving, saved, saveFailed, SAVE_SUCCESS, INITIAL_POST_ID } from '../modules/write'
-import WriteView from '../components/WriteView'
+
+import ArticleView from '../components/ArticleView'
 
 const mapDispatchToProps = {
-  saved, saving, saveFailed
+  
 }
 
 const getUserId = (state) => state.auth.isAuth ? state.auth.profile.uid : ''
-const getWriteState = (state) => state.write
 
 const userIdListener = createSelector(
   [ getUserId ],
@@ -16,16 +15,15 @@ const userIdListener = createSelector(
     return userId
   }
 )
-const writeStateListener = createSelector(
-  [ getWriteState ],
-  (writeState) => {
-    return writeState
+const articleStateListener = createSelector(
+  [ getArticleState ],
+  (articleState) => {
+    return articleState
   }
 )
 const mapStateToProps = (state) => ({
   uid: userIdListener(state),
-  currentState: writeStateListener(state).currentState || SAVE_SUCCESS,
-  currentPostID: writeStateListener(state).currentPostID || INITIAL_POST_ID,
+  currentArticle: articleStateListener(state)
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
@@ -42,4 +40,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(WriteView)
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleView)

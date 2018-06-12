@@ -1,6 +1,6 @@
-@import '~normalize.css/normalize';
+@import '~normalize-scss/sass/_normalize.scss';
 @import '~font-awesome/css/font-awesome.min.css';
-@import 'bootstrap/bootstrap';
+@import 'bootstrap/_bootstrap.scss';
 
 /**各种主题颜色**/
 $global-color: #683047;
@@ -87,6 +87,11 @@ table {
 input:focus{
 	outline: none;
 }
+
+input:-webkit-autofill {  
+	box-shadow: 0 0 0px 1000px white inset;  
+	-webkit-text-fill-color: #333;  
+}  
 
 /* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
 html { overflow-y: scroll; }

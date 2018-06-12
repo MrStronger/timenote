@@ -10,6 +10,7 @@ const compress = require('compression')
 const app = express()
 app.use(compress())
 
+
 // ------------------------------------
 // Apply Webpack HMR Middleware
 // ------------------------------------
@@ -30,7 +31,15 @@ if (project.env === 'development') {
     path: '/__webpack_hmr'
   }))
 
-  app.use('/', proxy({ target: 'http://timenote.ink19.cn', changeOrigin: true }))
+  const proxyOptions = {
+    target: 'http://timenote.ink19.cn',
+    changeOrigin: true,
+    secure: false,
+    cookieDomainRewrite: {
+      '*' : 'localhost'
+    },
+  }
+  app.use('/', proxy(proxyOptions))
   // Serve static assets from ~/public since Webpack is unaware of
   // these files. This middleware doesn't need to be enabled outside
   // of development since this directory will be copied into ~/dist

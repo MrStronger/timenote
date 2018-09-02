@@ -23,7 +23,7 @@ export default class WriteView extends Component {
   }
 
   lables = []
-  lastTime = 0
+  lastContent = ''
   getLabels = (labels) => {
     this.labels = labels
   }
@@ -98,16 +98,15 @@ export default class WriteView extends Component {
   handleHTMLChange = (htmlContent) => {
     debugger
     
-    if (htmlContent !== '<p></p>') {
-      if (!this.lastTime) {
-        this.lastTime = Date.now()
-      } else {
-        if (Date.now() - this.lastTime > 5000) {
-          this.save(htmlContent)
-          this.lastTime = Date.now()
-        }
+    if (this.lastContent) {
+      if (htmlContent !== this.lastContent) {
+        Utils.throttle(this.save, 3000)(this, htmlContent)
+        this.lastContent = htmlContent
       }
+    } else {
+      this.lastContent = htmlContent
     }
+    
   }
 
   componentDidMount () {

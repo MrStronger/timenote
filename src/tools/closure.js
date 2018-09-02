@@ -29,6 +29,7 @@ export function throttle (fun, delay) {
       debugger
       runCallback()
     } else {
+      clearTimeout(timeout)
       timeout = setTimeout(runCallback, delay)
     }
   }
